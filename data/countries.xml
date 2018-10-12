@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<countries>
+  <country>
+    <name>aa</name>
+    <value>aa</value>
+  </country>
+  <country>
+    <name>bb</name>
+    <value>bb</value>
+  </country>
+  <country>
+    <name>cc</name>
+    <value>cc</value>
+  </country>
+</countries>

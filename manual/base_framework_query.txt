@@ -1,0 +1,13 @@
+create (s:SmartSkeMaRoot {name:"sketch map data root"})-[rhm:HAS_MAPS]->(mr:MapsRoot {name:"maps"})
+merge (s)-[rhr:HAS_RELATION_SETS]->(rs:RelationSetRoot {name:"relation_sets"})
+merge (mr)-[rhmc1:HAS_MAP_CLASS]->(pmm:metric_maps {map_class:"metric_maps"})
+merge (mr)-[rhmc2:HAS_MAP_CLASS]->(psm:sketch_maps {map_class:"sketch_maps"})
+merge (rs)-[rhrc1:HAS_RELATION_SET_CLASS]->(rt1:RelationType {name:"RegionStarVars"})
+merge (rs)-[rhrc2:HAS_RELATION_SET_CLASS]->(rt2:RelationType {name:"DE9IM"})
+merge (rs)-[rhrc3:HAS_RELATION_SET_CLASS]->(rt3:RelationType {name:"leftRight"})
+merge (rs)-[rhrc4:HAS_RELATION_SET_CLASS]->(rt4:RelationType {name:"RCC11"})
+merge (rs)-[rhrc5:HAS_RELATION_SET_CLASS]->(rt5:RelationType {name:"opra"})
+merge (rs)-[rhrc6:HAS_RELATION_SET_CLASS]->(rt6:RelationType {name:"relDist"})
+merge (rs)-[rhrc7:HAS_RELATION_SET_CLASS]->(rt7:RelationType {name:"linearOrdering"})
+merge (rs)-[rhrc8:HAS_RELATION_SET_CLASS]->(rt8:RelationType {name:"streetTopology"})
+return s,mr,pmm,psm,rs,rt1,rt2,rt3,rt4,rt5,rt6,rt7,rt8

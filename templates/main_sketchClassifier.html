@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<title>Sketch Map Classifier Tool</title>
+	<meta http-equiv="pragma" content="no-cashe">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-Control"
+		content="no-store; no-cache; must-revalidate">
+	<meta http-equiv="Cache-Control" content="post-check=0; pre-check=0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+	<link href="../static/css/leaflet.css" rel="stylesheet">
+	<link href="../static/css/leaflet.pm.css" rel="stylesheet">
+	<link href="../static/css/leaflet.draw.css" rel="stylesheet">
+
+	<link href="../static/css/main_sketchClassifier.css" rel="stylesheet">
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+
+	<!-- newer version of the jquery.min.js, loading website takes longer with old version-->
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+		
+	<!-- 
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"</script>
+		integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+		crossorigin=""> 
+	-->
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw.js"></script>
+	<script src="../static/js/leaflet.pm.min.js"></script>
+	<script src="../static/js/leaflet.geometryutil.js"></script>
+	<script src="../static/js/leaflet.snap.js"></script>
+
+	<script src="../static/js/leaflet.polylineDecorator.js"></script>
+
+	<script src="../static/js/main_sketchClassifier.js"></script>
+	<!--<script src="../static/js/jquery-1.11.1.min.js"></script>-->
+
+</head>
+
+<body id="body">
+	<br>
+	<div id="header_div" class="container">
+		<br> <img src="../static/imgs/wwu.jpg" align="right" class="img-rounded"
+			width="120" height="55">
+			<img src="../static/imgs/SIL.png" align="left" class="img-rounded"
+			width="120" height="55">
+		<div class="panel-header text-center">
+			<h2>
+				<b><font color="white">Sketch Map Classifier</font></b>
+			</h2>
+			<h3>
+				<font color="white">A tool that classifies input sketch maps
+					using the preserved qualitative configurations </font>
+			</h3>
+		</div>
+	</div>
+	<br>
+	<div>
+		<p>
+		<div id="buttons">
+			<div id="button_div" class="container" align=center>
+				<button id="qualify_MM" type="button"
+					class="btn btn-primary btn-arrow-right" onclick="qualify_MM()">
+					<span class="badge badge-inverse"> 1 </span> <span> </span> Qualify
+					Base Map
+				</button>
+				<button id="qualify_SM" type="button"
+					class="btn btn-primary btn-arrow-right" onclick="qualify_SM()">
+					<span class="badge badge-inverse"> 2 </span><span> </span> Qualify
+					Sketch Map
+				</button>
+				<button id="getDatabase_Result" type="button"
+					class="btn btn-primary btn-arrow-right"	onclick="getDatabase_Result()">
+					<span class="badge badge-inverse"> 3 </span><span> </span>
+					Analyse Sketch Map
+				</button>
+			</div>
+		</div>
+		<p>
+	</div>
+	<div class="container-fluid">
+		<div class="table" id="table-intro">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td id="LoadedMaps" align=center>
+							<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Initialize Database for first time...!">
+									<button id="initializeDatabase" type="button"
+								class="btn btn-success btn-arrow-right"  onclick="initializeDatabase()">
+								<b>Initialize Database</b>
+							</button>
+							</span>
+						<br>
+						<br>
+							<h5>
+								<font face="Courier New"><b>Geo-referenced Map</b></font>
+							</h5>
+							<div id="loadMapThumbnail" class="loadMapThumbnail">
+								<label> <input id="MetrichMapInputbutton" type="file"
+									style="display: none;" onChange="loadMetricMap()" /><span
+									class="badge badge-inverse" id="span_mm">load base Map</span> <img
+									id="mm" src="../static/imgs/MM.png" alt=""></img>
+									<div align="left" >
+										<label><input id="importMetricFeatures" type="file"
+											style="display: none;" onChange="uploadJsonMM()"/><span
+											class="btn btn-link" id="span_mm1"><font face="Courier New">load GeoJSON</font></span>
+										</label>
+									</div>
+								</label>
+							</div>
+							<hr style="border-top: 2px double dotted gray" />
+							<h5>
+								<font face="Courier New"><b>Hand Drawn Maps</b></font>
+							</h5>
+							<div id="loadMapThumbnail1" class="loadMapThumbnail">
+								<label> <input id="SketchMapInputbutton" type="file"
+									style="display: none;" onChange="loadSketchMap()" /><span
+									class="badge badge-inverse" id="span_sm1">load sketch 1</span>
+									<img id="sm1" src="../static/imgs/empsketch.png" alt="">
+									<div align="left" >
+										<label><input id="importSketchFeatures" type="file"
+											style="display: none;" onChange="uploadJsonSM()"/><span
+											class="btn btn-link" id="span_sm"><font face="Courier New">load GeoJSON</font></span>
+										</label>
+										</div>
+								</label>
+							</div>
+						</td>
+						<td id="mapHolders" align=center>
+							<div id=metricmapplaceholder align="Center"></div>
+							<hr style="border-top: 2px double solid block" />
+							<div id="sketchmapplaceholder1" align=center></div>
+							<hr style="border-top: 2px double solid block" />
+						</td>
+						<td id="links" align="left">
+							<!-- links for metric maps -->
+							<div id=MMLinks>
+								<h6>
+									<font face="Courier New"><b>Display Labels</b></font>
+								</h6>
+								<div>
+									<label class="radio-inline"> <input type="radio"
+										name="showLabels" id="showLabels" onclick="showLabels()"><font
+										face="Courier New">Show Labels</font></label>
+								</div>
+								<div>
+									<label class="radio-inline"> <input type="radio"
+										name="hideLabels" id="hideLabels" checked="checked"
+										onclick="hideLabels()"><font face="Courier New">Hide
+											Labels</font>
+									</label>
+								</div>
+								<br />
+								<h6>
+									<font face="Courier New"><b>Downloads</b></font>
+								</h6>
+								<div>
+									<a href='#' id='exportMetricFeatures'
+										onclick="downloadJsonMM()" style="color: green"><font
+										face="Courier New">GeoJson Metric</font></a>
+								</div>
+								<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+								<br /> <br /> <br /> <br /> <br /> <br /><br /> <br /> <br />
+								<br /><br /> <br /> <br /><br /><br /> <br /> <br /> <br />
+							</div> <!-- links for sketch maps -->
+							<div id=SMLinks class="hideMe">
+								<h6>
+									<font face="Courier New"><b>Display Labels</b></font>
+								</h6>
+								<div>
+									<label class="radio-inline"> <input type="radio"
+										name="showLabels_sm" id="showLabels_sm" onclick="showLabels_sm()"><font
+										face="Courier New">Show Labels</font></label>
+								</div>
+								<div>
+									<label class="radio-inline"> <input type="radio"
+										name="hideLabels_sm" id="hideLabels_sm" checked="checked"
+										onclick="hideLabels_sm()"><font face="Courier New">Hide
+											Labels</font></label>
+								</div>
+								<br />
+								<h6>
+									<font face="Courier New"><b>Downloads</b></font>
+								</h6>
+								<div>
+									<a href='#' id='exportSketchFeatures'
+										onclick="downloadJsonSM()" style="color: green"><font
+										face="Courier New">GeoJson Sketch</font></a>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<div class="panel-footer text-center">
+				<a href="https://its4land.com" target="_blank">its4land</a> | <a
+					href="https://ifgi.uni-muenster.de" target="_blank">Institute
+					for Geoinformatics, Munster</a> | <a
+					href="https://www.uni-muenster.de/Geoinformatics/en/sil/index.html"
+					rel="nofollow">Spatial Intelligence Lab Munster</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

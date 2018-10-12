@@ -1,0 +1,76 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 23 12:40:14 2018
+
+@author: Malumbo
+"""
+
+{ 
+	'features': [
+		{
+			'id':ID1, 
+			'smart_skema_type': ['smart skema type 1', ..., 'smart skema type k'], 
+			'feat_type': ['feature type 1', ..., 'feature type n'], 
+			'name':'given feature name',
+			'description':'textual description from data collection or editing',
+			'geometry_type':'geometry_type'
+		},
+		...
+		...
+		{
+			'id':ID1, 
+			'smart_skema_type': ['smart skema type 1', ..., 'smart skema type k'], 
+			'feat_type': ['feature type 1', ..., 'feature type n'], 
+			'name':'given feature name',
+			'description':'textual description from data collection or editing',
+			'geometry_type':'geometry_type'
+		},
+	],
+	'constraint_collection': [
+		{
+			'relation_set': 'name of set of spatial relations used e.g. RCC or DRA7',
+			'arity': i,
+			'properties': {'prop_1_name':prop_1, ..., 'prop_k_name':prop_k}
+			'constraints': [
+				{
+					'Obj 1':'id of first object',
+					'Obj 2':'id of second object',
+					...
+					...
+					'Obj i':'id of i^th object',
+					'relation':'relation between Obj 1, Obj 2, ..., Obj i'
+				},
+				...
+				...
+				{
+					'Obj j_1':'id of first object',
+					'Obj j_2':'id of second object',
+					...
+					...
+					'Obj j_i':'id of i^th object',
+					'relation':'relation between Obj j_1, Obj j_2, ..., Obj j_i'
+				}
+			]
+		},
+		...
+		...
+		{
+			'relation_set': 'name of set of spatial relations used e.g. RCC or DRA7',
+			'arity': 2,
+			'constraints': [
+				{
+					'Obj 1':'id of first object',
+					'Obj 2':'id of second object',
+					'relation':'relation between Obj 1, Obj 2'
+				},
+				...
+				...
+				{
+					'Obj k-1':'id of first object',
+					'Obj k':'id of second object',
+					'relation':'relation between Obj k-1, Obj k'
+				}
+			]
+		}
+	]
+}

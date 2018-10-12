@@ -1,0 +1,145 @@
+- measurrment based on relations 
+- route likeness 
+	- defineing route 
+	- correct and incorrect relations 
+	- count the correct relations between landmarks and other all objects 
+	- missing is not included i nthe measurments
+	- max number of drawn objects in sketch maps 
+	- city-blocks consider as regions 
+	- streets  as polygons and then compute relation between park and streets 
+		- 
+
+
+
+match (nm:Map),(nm_b:Map)
+where nm.map_type = "'sketch_map'"
+and nm_b.map_type = "'metric_map'"
+with nm, nm_b
+match (nm)-[hpr:HAS_PARTIAL_REPRESENTATION]->(nq:QCN)-[hn:HAS_NODE]->(nqn:QCN_Node)-[sr:SPATIAL_RELATION]->(nqn1:QCN_Node)
+
+with nm_b,nm,hn,nqn,nq,nqn1,sr
+
+match (nm_b)-[hpr_b:HAS_PARTIAL_REPRESENTATION]->(nq_b:QCN)-[hn_b:HAS_NODE]->(nqn_b:QCN_Node)-[sr_b:SPATIAL_RELATION]->(nqn1_b:QCN_Node)
+where
+nqn.geometry_type = nqn_b.geometry_type and
+nqn1.geometry_type = nqn1_b.geometry_type and 
+nq.relation_set = nq_b.relation_set and
+sr.constraint = sr_b.constraint 
+
+with nm_b,nm,hn,nqn,nq,nqn1,sr,nq_b,nqn_b,nqn1_b,sr_b
+merge (nqn)-[:NEW_RELATION]->(nqn_b)
+merge (nqn1)-[:NEW_RELATION]->(nqn1_b)
+return nqn,nqn_b, nqn1, nqn1_b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+match (nm:Map),(nm_b:Map)
+where nm.map_type = "'sketch_map'"
+and nm_b.map_type = "'metric_map'"
+with nm, nm_b
+
+match (nm)-[hpr:HAS_PARTIAL_REPRESENTATION]->(nq:QCN)-[hn:HAS_NODE]->(nqn:QCN_Node)-[sr:SPATIAL_RELATION]->(nqn1:QCN_Node)-[sr1:SPATIAL_RELATION]->(nqn2:QCN_Node)
+with nm_b,nm,hn,nqn,nq,nqn1,sr,sr1,nqn2
+
+match (nm_b)-[hpr_b:HAS_PARTIAL_REPRESENTATION]->(nq_b:QCN)-[hn_b:HAS_NODE]->(nqn_b:QCN_Node)-[sr_b:SPATIAL_RELATION]->(nqn1_b:QCN_Node)-[sr1_b:SPATIAL_RELATION]->(nqn2_b:QCN_Node)
+
+where
+
+nq.relation_set = nq_b.relation_set and
+sr.constraint = sr_b.constraint and
+sr1.constraint = sr1_b.constraint and
+
+nqn.geometry_type = nqn_b.geometry_type and
+nqn1.geometry_type = nqn1_b.geometry_type and
+nqn2.geometry_type = nqn2_b.geometry_type 
+with nm_b,nm,hn,nqn,nq,nqn1,sr,nq_b,nqn_b,nqn1_b,sr_b,sr1,sr1_b,nqn2,nqn2_b
+
+merge (nqn)-[:matched]->(nqn_b)
+merge (nqn1)-[:matched]->(nqn1_b)
+merge (nqn2)-[:matched]->(nqn2_b)
+
+return nqn,nqn_b,nqn1,nqn1_b, nqn2,nqn2_b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+query: return only number of polygon in SM
+
+match(sm:Map)-[fn:HAS_FEATURE]->(f:Feature_Node)
+where sm.map_type = "'sketch_map'"
+with f
+where f.geometry_type="'Polygon'"
+return count (f)
+
+------------------------------
+Query: counting number of features in sketch map_type
+
+match(sm:Map)-[fn:HAS_FEATURE]->(f:Feature_Node)
+where sm.map_type = "'sketch_map'"
+return count(f)
+
+
+
+
+Query: example 
+--------------------
+match(sm:Map),(mm:Map)
+with sm, mm
+match (sm)-[hpr:HAS_PARTIAL_REPRESENTATION]->(qn:QCN)-[hn:HAS_NODE]->(nqn:QCN_Node)-[sr:SPATIAL_RELATION]->(nqn1:QCN_Node)
+with mm,sm,hpr, qn, hn, nqn, sr,nqn1
+match (mm)-[hpr_b:HAS_PARTIAL_REPRESENTATION]->(nq_b:QCN)-[hn_b:HAS_NODE]->(nqn_b:QCN_Node)-[sr_b:SPATIAL_RELATION]->(nqn1_b:QCN_Node)
+where qn.relation_set = nq_b.relation_set and sr.constraint = sr_b.constraint and nqn.geometry_type = nqn_b.geometry_type
+
+with mm,sm,hn,nqn,qn,nqn1,sr,nq_b,nqn_b,nqn1_b,sr_b
+return mm,sm,hn,nqn,qn,nqn1,sr,nq_b,nqn_b,nqn1_b,sr_b
+http://www.sketchmapia.de/its4land-domain-model
+
+============================================
+match (nm:Map),(nm_b:Map)
+where ID(nm) = 3 and nm.map_type = "'sketch_map'"
+and ID(nm_b) = 1 and nm_b.map_type = "'metric_map'"
+with nm, nm_b
+match (nm)-[hpr:HAS_PARTIAL_REPRESENTATION]->(nq:QCN)-[hn:HAS_NODE]->(nqn:QCN_Node)-[sr:SPATIAL_RELATION]->(nqn1:QCN_Node)
+with nm_b,nm,hn,nqn,nq,nqn1,sr
+match (nm_b)-[hpr_b:HAS_PARTIAL_REPRESENTATION]->(nq_b:QCN)-[hn_b:HAS_NODE]->(nqn_b:QCN_Node)-[sr_b:SPATIAL_RELATION]->(nqn1_b:QCN_Node)
+where nq.relation_set = nq_b.relation_set and sr.constraint = sr_b.constraint and nqn.geometry_type = nqn_b.geometry_type
+and nqn1.geometry_type = nqn1_b.geometry_type and nqn.feat_type = nqn_b.feat_type and nqn1.feat_type = nqn1_b.feat_type
+with nm_b,nm,hn,nqn,nq,nqn1,sr,nq_b,nqn_b,nqn1_b,sr_b
+merge (nqn)-[:NEW_RELATION]->(nqn_b)
+merge (nqn1)-[:NEW_RELATION]->(nqn1_b)

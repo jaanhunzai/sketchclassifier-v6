@@ -1,0 +1,3015 @@
+{
+    "properties": {
+        "map_type": "sketch_map"
+    },
+    "constraint_collection": [
+        {
+            "constraints": [
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "CityCenter",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "ParkingGarage",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Sparkasse",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Busstop1",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "CityCenter",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "ParkingGarage",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Sparkasse",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Busstop1",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "ParkingGarage",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Sparkasse",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Busstop1",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Sparkasse",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Busstop1",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Busstop1",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Ifgi",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "TrainStation",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Busstop2",
+                    "relation": "dc"
+                }
+            ],
+            "relation_set": "RCC8",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Weselerstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Inselbogen1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "Busstop2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disjoint"
+                }
+            ],
+            "relation_set": "DE9IM",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Aasee",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "CityCenter",
+                    "relation": "crosses"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "ParkingGarage",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Sparkasse",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Busstop1",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Ifgi",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "TrainStation",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Busstop2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Aasee",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "CityCenter",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "ParkingGarage",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Sparkasse",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Busstop1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Ifgi",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "TrainStation",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Busstop2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Aasee",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "CityCenter",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "ParkingGarage",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Sparkasse",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Busstop1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Ifgi",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "TrainStation",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Busstop2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Aasee",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "CityCenter",
+                    "relation": "crosses"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "ParkingGarage",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Sparkasse",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Busstop1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Ifgi",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "TrainStation",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Busstop2",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "Aasee",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "CityCenter",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "ParkingGarage",
+                    "relation": "left"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "Sparkasse",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "Busstop1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "Ifgi",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "TrainStation",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "Bahnhofsstr.",
+                    "obj 2": "Busstop2",
+                    "relation": "right"
+                }
+            ],
+            "relation_set": "leftRight",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen1",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Moltkestr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen1",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Moltkestr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Inselbogen3",
+                    "relation": "front_of"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Inselbogen2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Moltkestr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Inselbogen2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Moltkestr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Moltkestr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "half_left"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Moltkestr.",
+                    "relation": "half_right"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Moltkestr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Hammerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Hafenstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Hammerstr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "front_of"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "front_of"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Hammerstr.",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Hafenstr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "half_left"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "half_left"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "half_right"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "right_of"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "left_of"
+                },
+                {
+                    "obj 1": "Von-Steuben-Str.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "left_of"
+                }
+            ],
+            "relation_set": "opra",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Bonhoefferstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Bonhoefferstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Inselbogen3",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Inselbogen2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen3",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Weselerstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Moltkestr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Inselbogen2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Weselerstr.3",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Moltkestr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Moltkestr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Hammerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Hafenstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Weselerstr.3",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "AmKanonengraben",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Hammerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Moltkestr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Hammerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Hafenstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "AmKanonengraben",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Hafenstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hammerstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Schorlemerstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Hafenstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Engelstr.2",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Engelstr.1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Schorlemerstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Engelstr.1",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Engelstr.2",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Herwarthstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Engelstr.1",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Von-Steuben-Str.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Herwarthstr.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "Von-Steuben-Str.",
+                    "obj 2": "Bahnhofsstr.",
+                    "relation": "connected"
+                }
+            ],
+            "relation_set": "streetTopology",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "St-Antonius-Kirche",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "CityCenter",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "ParkingGarage",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Sparkasse",
+                    "relation": "overlapped_by"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Busstop1",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Ifgi",
+                    "relation": "overlapped_by"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Aasee",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "CityCenter",
+                    "relation": "overlaps"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "ParkingGarage",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Sparkasse",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Busstop1",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Ifgi",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "St-Antonius-Kirche",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "ParkingGarage",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Sparkasse",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Busstop1",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Ifgi",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "CityCenter",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Sparkasse",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Busstop1",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Ifgi",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "ParkingGarage",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Busstop1",
+                    "relation": "after"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Ifgi",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Sparkasse",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Ifgi",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Busstop1",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "TrainStation",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "Ifgi",
+                    "obj 2": "Busstop2",
+                    "relation": "before"
+                },
+                {
+                    "obj 1": "TrainStation",
+                    "obj 2": "Busstop2",
+                    "relation": "after"
+                }
+            ],
+            "relation_set": "linearOrdering",
+            "arity": 2
+        }
+    ],
+    "features": [
+        {
+            "FID": "Aasee",
+            "id": "Aasee",
+            "isRoute": null,
+            "name": "Aasee",
+            "feat_type": "Cityblock",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "St-Antonius-Kirche",
+            "id": "St-Antonius-Kirche",
+            "isRoute": null,
+            "name": "St-Antonius-Kirche",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "CityCenter",
+            "id": "CityCenter",
+            "isRoute": null,
+            "name": "CityCenter",
+            "feat_type": "Cityblock",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "ParkingGarage",
+            "id": "ParkingGarage",
+            "isRoute": null,
+            "name": "ParkingGarage",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "Sparkasse",
+            "id": "Sparkasse",
+            "isRoute": null,
+            "name": "Sparkasse",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "Busstop1",
+            "id": "Busstop1",
+            "isRoute": null,
+            "name": "Busstop1",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "Ifgi",
+            "id": "Ifgi",
+            "isRoute": null,
+            "name": "Ifgi",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "TrainStation",
+            "id": "TrainStation",
+            "isRoute": null,
+            "name": "TrainStation",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "Busstop2",
+            "id": "Busstop2",
+            "isRoute": null,
+            "name": "Busstop2",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": "Weselerstr.2",
+            "id": "Weselerstr.2",
+            "isRoute": null,
+            "name": "Weselerstr.2",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Bonhoefferstr.",
+            "id": "Bonhoefferstr.",
+            "isRoute": null,
+            "name": "Bonhoefferstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Inselbogen1",
+            "id": "Inselbogen1",
+            "isRoute": null,
+            "name": "Inselbogen1",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Inselbogen3",
+            "id": "Inselbogen3",
+            "isRoute": null,
+            "name": "Inselbogen3",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Inselbogen2",
+            "id": "Inselbogen2",
+            "isRoute": null,
+            "name": "Inselbogen2",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Weselerstr.1",
+            "id": "Weselerstr.1",
+            "isRoute": "Yes",
+            "name": "Weselerstr.1",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Weselerstr.3",
+            "id": "Weselerstr.3",
+            "isRoute": null,
+            "name": "Weselerstr.3",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Moltkestr.",
+            "id": "Moltkestr.",
+            "isRoute": "Yes",
+            "name": "Moltkestr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "AmKanonengraben",
+            "id": "AmKanonengraben",
+            "isRoute": null,
+            "name": "AmKanonengraben",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Hammerstr.",
+            "id": "Hammerstr.",
+            "isRoute": null,
+            "name": "Hammerstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Hafenstr.",
+            "id": "Hafenstr.",
+            "isRoute": null,
+            "name": "Hafenstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Schorlemerstr.",
+            "id": "Schorlemerstr.",
+            "isRoute": "Yes",
+            "name": "Schorlemerstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Engelstr.2",
+            "id": "Engelstr.2",
+            "isRoute": null,
+            "name": "Engelstr.2",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Engelstr.1",
+            "id": "Engelstr.1",
+            "isRoute": null,
+            "name": "Engelstr.1",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Herwarthstr.",
+            "id": "Herwarthstr.",
+            "isRoute": "Yes",
+            "name": "Herwarthstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Von-Steuben-Str.",
+            "id": "Von-Steuben-Str.",
+            "isRoute": null,
+            "name": "Von-Steuben-Str.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "Bahnhofsstr.",
+            "id": "Bahnhofsstr.",
+            "isRoute": "Yes",
+            "name": "Bahnhofsstr.",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        }
+    ]
+}

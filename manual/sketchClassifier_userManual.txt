@@ -1,0 +1,46 @@
+
+SketchClassifier guideline 
+
+----------------------------------------------
+Dependencies 
+----------------------------------------------
+	1. Install Neo4j Desktop (https://neo4j.com/download/)
+	2. Download sketchClassifier_build folder on your local derive and unzip (i.e C:/)
+
+
+-----------------------------------------------
+How to Run the Classifier:
+-----------------------------------------------
+	1. Run the Neo4j and create one new project for new Graph(database) "create a local Graph"
+		- set password "Neo4j"
+		- start database
+		- click on "Manage" link  and go to setting tab
+			- change the dbms.security.auth_enabled=true to "false" and "apply" the changes
+		- Run the database (to see the running database click on "Open Browser" button)
+			
+	2. from the downloaded sketchClassifier_build folder run the sketchClassifier.exe 
+
+	3. Open the browser and enter the following link:
+		- http://127.0.0.1:5000/
+		- then click the link:
+			Sketch Classifier (semi automatic) 
+	
+------------------------------------------------
+How to Anotate objects on the loaded maps
+------------------------------------------------
+
+	1. For the first time you have to click on the green button:  "Initialize Database" 
+		(Note: this will delete previous stored data and create new  structure to store qcns in the database)
+	2. start annotating  street segments 
+		- make sure that the orientation of drawn streets should be identical in both maps
+		- make sure that streets are connected at junctions
+		- check the check-box if the drawn street is part of the predefined route 
+	3. draw polygons 
+		- check the is_landmarks check-box if the drawn polygon is a landmark 
+		- check the is_region check-box if the drawn polygon is a region 
+	4. qualify maps 
+		- first base map
+		- second sketch map
+		- analyse sketch map
+	5. the system will show results in the new browser tab
+	6. you can download the results in pdf/csv format

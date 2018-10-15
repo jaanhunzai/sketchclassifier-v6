@@ -6,7 +6,6 @@ Created on Mon Apr 30 15:51:54 2018
 """
 
 from flask import Flask, render_template, request
-
 from analyser import completeness
 from analyser import qualitativeAnalyser
 from qualifier import qualify_map
@@ -22,7 +21,8 @@ import os
 create flask web app instance 
 """
 app = Flask(__name__)
-
+metricMapID = None
+sketchMapID = None
 
 
 @app.route("/")
@@ -58,12 +58,13 @@ def getSketchMapID():
 
 @app.route("/mmReceiver", methods=["POST", "GET"])
 def mmGeoJsonReceiver():
+
+    global metricMapID
+    metricMapID = metricMapID
     mmGeoJson = request.get_json("MMGeoJsonData")
     data_format = "geojson"
     map_type = "metric_map"
-
     metricMapData = qualify_map.main_loader(metricMapID, mmGeoJson, data_format, map_type)
-
     filepath = "./output/"+str(metricMapID)+".json"
     print("final file path mm...", filepath)
     try:
@@ -84,14 +85,12 @@ def mmGeoJsonReceiver():
 
 @app.route("/smReceiver", methods=["POST", "GET"])
 def smGeoJsonReceiver():
-
+    global sketchMapID
+    sketchMapID = sketchMapID
     smGeoJson = request.get_json()
-
     data_format = "geojson"
     map_type = "sketch_map"
-
     sketchMapData = qualify_map.main_loader(sketchMapID, smGeoJson, data_format, map_type)
-
     filepath = './output/'+str(sketchMapID)+'.json'
     print("final file path. sm..",filepath)
     try:
@@ -115,7 +114,10 @@ def initializeDatabase():
 
 @app.route('/results', methods=["POST", "GET"])
 def getDatabseResults():
-
+    global metricMapID
+    global sketchMapID
+    sketchMapID = sketchMapID
+    metricMapID = metricMapID
     with open( './output/'+metricMapID+'.json') as mmjson:
         try:
             #print("reading path..",os.path.join(dir_qcns,'metric_map.json'))

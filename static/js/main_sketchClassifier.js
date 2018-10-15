@@ -1111,8 +1111,8 @@ function getDatabase_Result(){
 	console.log("sketch map ID",sketchFileName);
 	$.ajax({
 		url:'/results',
-		type: 'GET',
 		success: function( resp ) {
+		}
 	});
 
 	window.open('/results','_blank');

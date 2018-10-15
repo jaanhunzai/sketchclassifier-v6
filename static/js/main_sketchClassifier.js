@@ -1071,7 +1071,7 @@ function ProcessMap(){
  **/
 function qualify_MM(){
 	MMGeoJsonData = drawnItems.toGeoJSON();
-	console.log(MMGeoJsonData)
+	//console.log(MMGeoJsonData)
 	//var MMGeoJSON = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(MMGeoJsonData));
 
 	$.ajax({
@@ -1111,10 +1111,8 @@ function getDatabase_Result(){
 	console.log("sketch map ID",sketchFileName);
 	$.ajax({
 		url:'/results',
-		data:{result:"result"},
+		type: 'GET',
 		success: function( resp ) {
-		}
-
 	});
 
 	window.open('/results','_blank');

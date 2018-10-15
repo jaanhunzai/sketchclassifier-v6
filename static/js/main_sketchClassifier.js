@@ -1111,12 +1111,14 @@ function getDatabase_Result(){
 	console.log("sketch map ID",sketchFileName);
 	$.ajax({
 		url:'/results',
+		type: 'GET',
 		success: function( resp ) {
 		}
 	});
-
 	window.open('/results','_blank');
 };
+
+
 //To download results in the PDF
 function downloadResults(){
 	//alert("is comming here ")
@@ -1181,6 +1183,7 @@ function download_csv(csv, filename) {
     downloadLink.click();
 };
 //initializeDatabase for analysing sketch maps
+/**
 function initializeDatabase(){
 	$.ajax({
 		url:'/initializeDatabase',
@@ -1191,3 +1194,4 @@ function initializeDatabase(){
 
 	});
 };
+**/

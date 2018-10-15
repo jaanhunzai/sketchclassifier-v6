@@ -21,8 +21,6 @@ import os
 create flask web app instance 
 """
 app = Flask(__name__)
-metricMapID = None
-sketchMapID = None
 
 
 @app.route("/")
@@ -59,13 +57,13 @@ def getSketchMapID():
 @app.route("/mmReceiver", methods=["POST", "GET"])
 def mmGeoJsonReceiver():
 
-    global metricMapID
-    metricMapID = metricMapID
     mmGeoJson = request.get_json("MMGeoJsonData")
     data_format = "geojson"
     map_type = "metric_map"
-    metricMapData = qualify_map.main_loader(metricMapID, mmGeoJson, data_format, map_type)
-    filepath = "./output/"+str(metricMapID)+".json"
+
+    metricMapData = qualify_map.main_loader("metricMapID", mmGeoJson, data_format, map_type)
+
+    filepath = "./output/"+str("metricMapID")+".json"
     print("final file path mm...", filepath)
     try:
        if os.path.exists(filepath):
@@ -85,13 +83,12 @@ def mmGeoJsonReceiver():
 
 @app.route("/smReceiver", methods=["POST", "GET"])
 def smGeoJsonReceiver():
-    global sketchMapID
-    sketchMapID = sketchMapID
+
     smGeoJson = request.get_json()
     data_format = "geojson"
     map_type = "sketch_map"
-    sketchMapData = qualify_map.main_loader(sketchMapID, smGeoJson, data_format, map_type)
-    filepath = './output/'+str(sketchMapID)+'.json'
+    sketchMapData = qualify_map.main_loader("sketchMapID", smGeoJson, data_format, map_type)
+    filepath = './output/'+str("sketchMapID")+'.json'
     print("final file path. sm..",filepath)
     try:
         if os.path.exists(filepath):
@@ -104,28 +101,17 @@ def smGeoJsonReceiver():
     return "Qualify Successfully"
 
 
-"""
-@app.route("/initializeDatabase", methods=["POST", "GET"])
-def initializeDatabase():
-    #deleted = completeness.deleteAllRecords()
-    #msg = completeness.createGraphStructure()
-    return "msg"
-"""
-
-@app.route('/results', methods=["POST", "GET"])
+@app.route('/results/',methods=["POST", "GET"])
 def getDatabseResults():
-    global metricMapID
-    global sketchMapID
-    sketchMapID = sketchMapID
-    metricMapID = metricMapID
-    with open( './output/'+metricMapID+'.json') as mmjson:
+
+    with open( './output/'+"metricMapID"+'.json') as mmjson:
         try:
             #print("reading path..",os.path.join(dir_qcns,'metric_map.json'))
             metricMapQCNs = json.load(mmjson)
         except IOError:
             print("metric_map.json is not loading ")
 
-    with open('./output/'+sketchMapID+'.json') as smjson:
+    with open('./output/'+"sketchMapID"+'.json') as smjson:
         try:
             sketchMapQCNs = json.load(smjson)
         except IOError:
@@ -296,7 +282,7 @@ def getDatabseResults():
     print("recall....:", recall)
     print("F-value....:", f_score)
 
-    return render_template("results.html", sketchMapID=sketchMapID,total_mm_landmarks=total_mm_landmarks,toal_mm_streets=toal_mm_streets,total_mm_cityblocks=total_mm_cityblocks,totalSketchedLandmarks=totalSketchedLandmarks,totalSketchedStreets=totalSketchedStreets,totalSketchedCityblocks=totalSketchedCityblocks,landmarkCompleteness=landmarkCompleteness,streetCompleteness=streetCompleteness,cityblockCompleteness=cityblockCompleteness,
+    return render_template("results.html", sketchMapID="sketchMapID",total_mm_landmarks=total_mm_landmarks,toal_mm_streets=toal_mm_streets,total_mm_cityblocks=total_mm_cityblocks,totalSketchedLandmarks=totalSketchedLandmarks,totalSketchedStreets=totalSketchedStreets,totalSketchedCityblocks=totalSketchedCityblocks,landmarkCompleteness=landmarkCompleteness,streetCompleteness=streetCompleteness,cityblockCompleteness=cityblockCompleteness,
                            overAllCompleteness=round(overAllCompleteness,2), totalRCC11Relations_mm=totalRCC11Relations_mm,totalRCC11Relations=totalRCC11Relations,correctRCC11Relations=correctRCC11Relations,wrongMatchedRCC11rels=wrongMatchedRCC11rels,missingRCC11rels=missingRCC11rels,
                            correctnessAccuracy_rcc11=round(correctnessAccuracy_rcc11,2),total_lO_rels_mm=total_lO_rels_mm,total_LO_rels_sm=total_LO_rels_sm,matched_LO_rels=matched_LO_rels,wrong_matched_LO_rels=wrong_matched_LO_rels,missing_LO_rels=missing_LO_rels,
                            correctnessAccuracy_LO=round(correctnessAccuracy_LO,2),total_LR_rels_mm=total_LR_rels_mm,total_LR_rels_sm=total_LR_rels_sm,matched_LR_rels=matched_LR_rels,wrong_matched_LR_rels=wrong_matched_LR_rels,missing_LR_rels=missing_LR_rels,

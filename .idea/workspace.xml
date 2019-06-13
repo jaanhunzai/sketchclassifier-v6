@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1289e04-b90b-4905-bda0-f81451bc4ce2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sketchClassifier-v6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sketchClassifier-v6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyser/qualitativeAnalyser.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyser/qualitativeAnalyser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qualifier/qualify_DE9IM.py" beforeDir="false" afterPath="$PROJECT_DIR$/qualifier/qualify_DE9IM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qualifier/qualify_LeftRight.py" beforeDir="false" afterPath="$PROJECT_DIR$/qualifier/qualify_LeftRight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qualifier/qualify_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/qualifier/qualify_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qualifier/utils_i4l.py" beforeDir="false" afterPath="$PROJECT_DIR$/qualifier/utils_i4l.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/layout_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/layout_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main_sketchClassifier.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main_sketchClassifier.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/classifier.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/classifier.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/sma_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/sma_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main_sketchClassifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main_sketchClassifier.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/metricMap_sma_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/metricMap_sma_script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/sketchMap_sma_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/sketchMap_sma_script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/resultSummary.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/resultSummary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/stepper.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/stepper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_sketchClassifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_sketchClassifier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_sma.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_sma.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webConnector.py" beforeDir="false" afterPath="$PROJECT_DIR$/webConnector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +14,7 @@
     <session id="682748547">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="88" />
+          <entry key="project.closed" value="90" />
           <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="25" />
           <entry key="project.open.time.10" value="2" />
@@ -108,73 +81,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main_sma.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+            <state relative-caret-position="846">
+              <caret line="47" column="63" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#2907#2913#0" expanded="true" />
+                <element signature="e#2914#2920#0" expanded="true" />
+                <element signature="e#2946#2952#0" expanded="true" />
+                <element signature="e#2964#2970#0" expanded="true" />
+                <element signature="e#2970#2976#0" expanded="true" />
+                <element signature="e#2988#2994#0" expanded="true" />
+                <element signature="e#2994#3000#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webConnector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qualifier/qualify_LeftRight.py">
+        <entry file="file://$PROJECT_DIR$/templates/includes/stepper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qualifier/utils_i4l.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="166" selection-start-line="166" selection-end-line="166" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qualifier/qualifier_interface.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qualifier/qualify_map.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/includes/resultSummary.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+            <state relative-caret-position="587">
+              <caret line="41" column="48" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#header#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h6#0;n#header#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/layout_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="125" column="35" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webConnector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="477" column="17" selection-start-line="477" selection-start-column="17" selection-end-line="477" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -182,26 +140,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/sketchMap_sma_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19133">
-              <caret line="1031" column="42" selection-start-line="1031" selection-start-column="22" selection-end-line="1031" selection-end-column="42" />
+            <state relative-caret-position="281">
+              <caret line="295" column="25" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="25" />
+              <folding>
+                <element signature="n#!!block;n#loadEditingToolforSM#0" />
+                <element signature="n#!!block;n#addLandmarkPopupSM#0" />
+                <element signature="n#!!block;n#changeColorSM#0" />
+                <element signature="n#!!block;n#ChangeColorBackSM#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/main_sketchClassifier.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14611">
-              <caret line="769" selection-start-line="769" selection-end-line="769" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/metricMap_sma_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13984">
-              <caret line="736" column="6" selection-start-line="736" selection-start-column="6" selection-end-line="736" selection-end-column="6" />
+            <state relative-caret-position="-1023">
+              <caret line="325" column="37" lean-forward="true" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -298,7 +253,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-1595" />
     <option name="y" value="209" />
     <option name="width" value="1479" />
@@ -310,6 +265,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,7 +287,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,10 +383,9 @@
     <option name="totallyTimeSpent" value="156845000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1688" y="108" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1595" y="209" width="1479" height="799" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17370325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19986121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -660,6 +614,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
           <caret line="41" column="48" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,6 +627,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
           <caret line="125" column="35" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -700,20 +664,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/main_sma.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+        <state relative-caret-position="846">
+          <caret line="47" column="63" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2907#2913#0" expanded="true" />
+            <element signature="e#2914#2920#0" expanded="true" />
+            <element signature="e#2946#2952#0" expanded="true" />
+            <element signature="e#2964#2970#0" expanded="true" />
+            <element signature="e#2970#2976#0" expanded="true" />
+            <element signature="e#2988#2994#0" expanded="true" />
+            <element signature="e#2994#3000#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webConnector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="393">
+          <caret line="477" column="17" selection-start-line="477" selection-start-column="17" selection-end-line="477" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -750,15 +722,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/sketchMap_sma_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19133">
-          <caret line="1031" column="42" selection-start-line="1031" selection-start-column="22" selection-end-line="1031" selection-end-column="42" />
+        <state relative-caret-position="281">
+          <caret line="295" column="25" selection-start-line="295" selection-start-column="9" selection-end-line="295" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!block;n#loadEditingToolforSM#0" />
+            <element signature="n#!!block;n#addLandmarkPopupSM#0" />
+            <element signature="n#!!block;n#changeColorSM#0" />
+            <element signature="n#!!block;n#ChangeColorBackSM#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/metricMap_sma_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13984">
-          <caret line="736" column="6" selection-start-line="736" selection-start-column="6" selection-end-line="736" selection-end-column="6" />
+        <state relative-caret-position="-1023">
+          <caret line="325" column="37" lean-forward="true" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
         </state>
       </provider>
     </entry>

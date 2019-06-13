@@ -1,22 +1,7 @@
-{% extends 'layout.html'%}
-
+{% extends 'layout_home.html'%}
+{% block title %} result_sma {% endblock %}
 {% block body %}
-<br>
-<div id="header_div" class="container">
-		<br> <img src="../static/imgs/wwu.jpg" align=right class="img-rounded"
-			width="100" height="55">
-			 <img src="../static/imgs/SIL.png" align="left" class="img-rounded"
-			width="120" height="55">
-		<div class="panel-header text-center">
-			<h3>
-			<b><font color="white">Qualiative Analysis of Maps </font></b>
-			</h3>
-			<h4>
-				<font color="white">Tool computes the accuracy based on preserved qualitative spatial configurations in the input sketch map </font>
-			</h4>
-		</div>
-</div>
-<br>
+
 <div class="container">
 		<a type="button" class="btn btn-primary " align="left" href="/main_sketchClassifier">Home</a>
 		<button id="downloadResults" type="button" class="btn btn-primary" onclick="downloadResults()">Download Results</button>
@@ -37,7 +22,7 @@
 							<tr class="success">
 									<th>Spatial Features </th>
 									<th>Features in Base map</th>
-									<th>Drawn Features </th> 
+									<th>Drawn Features </th>
 									<th>Completeness (%)</th>
 							</tr>
 						</thead>
@@ -52,7 +37,7 @@
 								<td>Landmarks</td>
 								<td>{{total_mm_landmarks}}</td>
 								<td>{{totalSketchedLandmarks}}</td>
-								<td>{{landmarkCompleteness}}</td>	
+								<td>{{landmarkCompleteness}}</td>
 							 </tr>
 							 <tr>
 								<td>Regions</td>
@@ -65,32 +50,32 @@
 								<td></td>
 								<td></td>
 								<td><b>{{overAllCompleteness}}</b></td>
-								
+
 							 </tr>
 						</tbody>
 				</table>
-		
+
 				<br>
 				<br>
 				<div id ="correctness">
 				<table  class="table table-condensed text-center">
 					<tr class="success">
 						<td colspan="7" align = "left"><b>Correctness of Drawn Features in sketch map: ID( {{sketchMapID}} )</b></td>
-					</tr>		
+					</tr>
 					<tr>
 						<th>Considered Qulitative Spatial Aspects</th>
-						<th>Relations in Base Map</th> 
-						<th>Relation in Sketch Map</th> 
+						<th>Relations in Base Map</th>
+						<th>Relation in Sketch Map</th>
 						<th>Correct Relations </th>
 						<th>Wrong Relations </th>
 						<th>Missing Relations </th>
 						<th>Accuracy Rate (%)</th>
 					 </tr>
-					
+
 					<tr>
 						<td align="left">Topological Relations between Landmarks and Regions</td>
-						<td>{{totalRCC11Relations_mm}}</td> 
-						<td>{{totalRCC11Relations}}</td> 
+						<td>{{totalRCC11Relations_mm}}</td>
+						<td>{{totalRCC11Relations}}</td>
 						<td>{{correctRCC11Relations}} </td>
 						<td>{{wrongMatchedRCC11rels }}</td>
 						<td>{{missingRCC11rels }}</td>
@@ -98,8 +83,8 @@
 					 </tr>
 					 <tr>
 						<td align="left">Linear Ordering of Landmarks along Street-segments</td>
-						<td>{{total_lO_rels_mm}}</td> 
-						<td>{{total_LO_rels_sm}}</td> 
+						<td>{{total_lO_rels_mm}}</td>
+						<td>{{total_LO_rels_sm}}</td>
 						<td>{{matched_LO_rels}} </td>
 						<td>{{wrong_matched_LO_rels }}</td>
 						<td>{{missing_LO_rels }}</td>
@@ -107,8 +92,8 @@
 					 </tr>
 					 <tr>
 						<td align="left">Left-Right Relations of Landmarks wrt. Street-segments</td>
-						<td>{{total_LR_rels_mm}}</td> 
-						<td>{{total_LR_rels_sm}}</td> 
+						<td>{{total_LR_rels_mm}}</td>
+						<td>{{total_LR_rels_sm}}</td>
 						<td>{{matched_LR_rels}} </td>
 						<td>{{wrong_matched_LR_rels }}</td>
 						<td>{{missing_LR_rels }}</td>
@@ -116,8 +101,8 @@
 					 </tr>
 					 <tr>
 						<td align="left">Topological Relations between Street-segments and Regions/Landmarks</td>
-						<td>{{total_DE9IM_rels_mm}}</td> 
-						<td>{{total_DE9IM_rels_sm}}</td> 
+						<td>{{total_DE9IM_rels_mm}}</td>
+						<td>{{total_DE9IM_rels_sm}}</td>
 						<td>{{matched_DE9IM_rels}} </td>
 						<td>{{wrong_matched_DE9IM_rels }}</td>
 						<td>{{missing_DE9IM_rels }}</td>
@@ -125,8 +110,8 @@
 					 </tr>
 					<tr>
 						<td align="left">Connectivity of Street-segments</td>
-						<td>{{total_streetTop_rels_mm}}</td> 
-						<td>{{total_streetTop_rels_sm}}</td> 
+						<td>{{total_streetTop_rels_mm}}</td>
+						<td>{{total_streetTop_rels_sm}}</td>
 						<td>{{matched_streetTop_rels}} </td>
 						<td>{{wrong_matched_streetTop_rels }}</td>
 						<td>{{missing_streetTop_rels }}</td>
@@ -134,8 +119,8 @@
 					 </tr>
 					 <tr>
 						<td align="left">Relative Orientation of Connected Street-segments</td>
-						<td>{{total_opra_rels_mm}}</td> 
-						<td>{{total_opra_rels_sm}}</td> 
+						<td>{{total_opra_rels_mm}}</td>
+						<td>{{total_opra_rels_sm}}</td>
 						<td>{{matched_opra_rels}} </td>
 						<td>{{wrong_matched_opra_rels }}</td>
 						<td>{{missing_opra_rels }}</td>
@@ -148,30 +133,31 @@
 						<td colspan="4" align = "left"><b>Overall Accuracy:</b></td>
 					</tr>
 					<tr>
-						<td></td> 
-						<td></td> 
+						<td></td>
+						<td></td>
 						<td>Precision</td>
-						<td>{{precision}}</td> 
-					
-						
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>				
-						<td>Recall</td> 
-						<td>{{recall}}</td> 
-						
+						<td>{{precision}}</td>
+
+
 					</tr>
 					<tr>
 						<td></td>
 						<td></td>
-						<td><b>F-Score<b></td> 
+						<td>Recall</td>
+						<td>{{recall}}</td>
+
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><b>F-Score<b></td>
 						<td><b>{{f_score}} </b></td>
-						
+
 					</tr>
-				
+
 				</table>
 		</div>
 	</div>
 </div>
+
 {% endblock%}

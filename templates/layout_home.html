@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sketch Map Analyzer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark ">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <a class="navbar-brand" href="#">
+                    <img src="../static/imgs/smartSkema.png" width="35" height="35" class="d-inline-block align-top"
+                         alt="logo">
+                    SmartSkeMa
+                </a>
+            </button>
+
+            <ul class="collapse navbar-collapse" id="navbarCollapse">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">login</a>
+                </li>
+
+                <div class="navbar">
+                    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+                    <a class="active" href="#"><i class="fa fa-fw fa-home"></i>Home</a>
+                    <a class="active" href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+                    <a class="active" href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+
+                </div>
+
+            </ul>
+        </nav>
+
+{% block body%}
+{% endblock %}
+</body>
+</html>

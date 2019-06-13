@@ -156,10 +156,12 @@ def computeMinMaxDist(polygonList, StreetList):
     for poly in polygonList[:]:
         distances =[]
         for street in StreetList[:]:
+            #print(street,poly)
             if not ((poly[1].touches(street[1])) or (poly[1].intersects(street[1]))):
                 distances.append(poly[1].distance(street[1]))
-                #print("distnce...", poly[1].distance(street[1]))
+                #print(poly[1].distance(street[1]))
         #print ("---------")
+
         minDistList.append(min(distances))
     #print("mindistance----",minDistList)
     maxMinDist = max(minDistList)

@@ -1,47 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sketch Map Analyzer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="utf-8">
+    <title>{% block title %}  {% endblock %}</title>
+    <meta http-equiv="pragma" content="no-cashe">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control"
+          content="no-store; no-cache; must-revalidate">
+    <meta http-equiv="Cache-Control" content="post-check=0; pre-check=0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- from otherfile!-->
 
+    <link href="../static/css/layout_home.css" rel="stylesheet">
+
+    <link href="../static/css/leaflet.css" rel="stylesheet">
+    <link href="../static/css/leaflet.pm.css" rel="stylesheet">
+    <link href="../static/css/leaflet.draw.css" rel="stylesheet">
+    <link href="../static/css/main_sketchClassifier.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+
+
+<!-- from otherfile!-->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw.js"></script>
+    <script src="../static/js/leaflet.geometryutil.js"></script>
+    <script src="../static/js/leaflet.pm.min.js"></script>
+    <script src="../static/js/leaflet.snap.js"></script>
+    <script src="../static/js/leaflet.polylineDecorator.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+
+    <script src="../static/js/FileSaver.js"></script><!--<script src="../static/js/main_sketchClassifier.js"></script>-->
+    <script src="../static/js/metricMap_sma_script.js"></script>
+    <script src="../static/js/sketchMap_sma_script.js"></script>
+
 </head>
 <body>
-        <nav class="navbar navbar-expand-xl navbar-dark bg-dark ">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <a class="navbar-brand" href="#">
-                    <img src="../static/imgs/smartSkema.png" width="35" height="35" class="d-inline-block align-top"
-                         alt="logo">
-                    SmartSkeMa
-                </a>
-            </button>
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark ">
+      <div class="navbar-header">
+          <div class="navbar-header">
+              <button class="">
+                  <img style="width: 50px;height: 50px" src="../static/imgs/sma_logo.png">
+              </button>
+          </div>
+      </div>
 
-            <ul class="collapse navbar-collapse" id="navbarCollapse">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">login</a>
-                </li>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item active" style="color: white"><a class="nav-link" href="/home"><span
+                      class="fa fa-fw fa-home"></span>Home </a></li>
+              {% if session['username'] %}
+                  <!--  <li class="nav-item active" style="color: white"><a class="nav-link" href="/home"><span
+                          class="fa fa-fw fa-upload"></span>Load Map </a></li>-->
+                  <!--  <li class="nav-item active" style="color: white"><a class="nav-link" type="button" onclick="analyzeInputMap()"><span
+                          class="fa fa-fw fa-cogs"></span>New Project </a></li>-->
 
-                <div class="navbar">
-                    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-                    <a class="active" href="#"><i class="fa fa-fw fa-home"></i>Home</a>
-                    <a class="active" href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-                    <a class="active" href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+              <!--<li class="nav-item dropdown active">
 
-                </div>
+                      <a class="nav-link dropdown-toggle" href="#" id="newProjectId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class ="fa fa-folder-open"></span> Project</a>
+                  <div class="dropdown-menu" aria-labelledby="newProjectId">
+                       <label class="dropdown-item">
+                          <span class="fa fa-fw fa-file"></span>
+                          <input id="newProject" type="" style="display: none;"
+                                 onclick="newProject(event)"/><span>New Project </span>
+                      </label>
+                      <label class="dropdown-item">
+                          <span class="fa fa-fw fa-upload"></span>
+                          <input id="loadProject" type="" style="display: none;"
+                                 onclick="loadProject()"/><span>Load Project </span>
+                      </label>
 
-            </ul>
-        </nav>
+                  </div>
+              </li>-->
 
-{% block body%}
+              <li class="nav-item active" style="color: white"><a class="nav-link" type="button" onclick="SaveProject()"><span
+                      class="fa fa-fw fa-save" syt></span>Save Project </a></li>
+              <li class="nav-item active" style="color: white"><a class="nav-link" type="button" onclick="analyzeInputMap()"><span
+                      class="fa fa-fw fa-cogs"></span>Analyze Map </a></li>
+
+              {% else %}
+              {% endif %}
+          </ul>
+
+          <ul class="navbar-nav float-md-right">
+              <li class="nav-item active" style="color: white"><a class="nav-link" href="/results"><span
+                      class="fa fa-fw fa-envelope"></span> Contact</a></li>
+              <li class="nav-item active" style="color: white"><a class="nav-link" href=""><span
+                      class="fa fa-fw fa-search"></span>Search &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          </ul>
+          <ul class="navbar-nav float-md-right">
+              {% if session['username'] %}
+                      <li class="nav-item active" style="color: white"><a class="nav-link" href=""><span
+                              class="fa fa-fw fa-user"></span> User ID: &nbsp;{{session['username'] }}</a></li>
+
+                        <li class="nav-item active" style="color: white"><a class="nav-link" href="/logout"><span
+                          class="fa fa-fw fa-sign-out"></span> LogOut</a></li>
+              {% else %}
+                      <li class="nav-item active" style="color: white"><a class="nav-link" href="/register"><span
+                              class="fa fa-fw fa-sign-in"></span> Sign Up</a></li>
+                      <li class="nav-item active" style="color: white"><a class="nav-link" href="/login"><span
+                          class="fa fa-fw fa-user"></span> LogIn</a></li>
+
+              {% endif %}
+         </ul>
+
+
+      </div>
+  </nav>
+  {% if session['username'] %}
+          <div style="text-align: center">
+              {% include "includes/message.html" %}
+          </div>
+  {% else %}
+  {% endif %}
+{% block body %}
 {% endblock %}
+  <div>
+      {% include "includes/resultSummary.html" %}
+  </div>
+  <div id="processRing" style="visibility: hidden"></div>
+  <div id="footer_div" class="navbar navbar-expand-xl navbar-dark bg-dark">
+         <div style="align: left">
+             <a style="color: white;"><b>©  2019 Institut für Geoinformatik |</b> <i>Heisenbergstraße 2
+                 48149 Münster, Germany  &nbsp; &nbsp; &nbsp;</i>
+             </a>
+        </div>
+     <div  style="align: right">
+         <a style="color: white;"><b>Spatial Intelligence Lab |</b> <i>Institute for Geoinformatics </i></a>
+    </div>
+</div>
+  <div id="newProject_div" class="w3-card-4 w3-round" style="visibility: hidden">
+      <header class="w3-panel w3-round w3-teal">
+          <h6 style="padding-top:3px "><a> Save project as </a>
+          </h6>
+      </header>
+      <div class="container" style="padding-right: 2px;padding-top: 2px">
+          <form>   Project Name: <input id = "ProjectName" type="text">
+              <label class="btn btn-outline-info btn-file btn-sm">
+                  Browse & Save
+                  <input id="saveBtn"  style="display: none"
+                         onclick="browseAndSave()">
+              </label>
+
+          </form>
+      </div>
+  </div>
+
 </body>
 </html>

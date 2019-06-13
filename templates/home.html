@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout_home.html'%}
+{% block title %} Home {% endblock %}
+{% block body %}
+
+<div class="container-fluid">
+    <br>
+    <br>
+    <div id="intro" style="text-align: center">
+        <div style="width: 1200px; display: inline-block; margin: auto;padding: 0px" class="w3-card w3-round">
+            <header class="w3-panel w3-round w3-teal" style="padding: 3px;margin: 1px">
+                <h4>
+                   <b>Welcome to Sketch Map Analyzer (SMA)</b>
+                   <!-- <button class="btn badge-info">
+                        <img style="width: 50px;height: 50px" src="../static/imgs/sma_logo.png">
+                    </button>-->
+
+                </h4>
+            </header>
+
+            <h4> The SMA is a tool that analysis the accuracy and completeness of the drawn
+                spatial information in the input Sketch Map
+                with respect to spatial information in the Geo-referenced Map </h4>
+            <br>
+            <h5>The accuracy of input map is measured based on the preserved Qualitative Spatial Configurations:</h5>
+            <br>
+            <div>
+                <ul style="list-style-type:square;text-align: left">
+                    <li><b>Topological relations between polygonal features</b>: <i>i.e. Connected, Disconnected,
+                        Overlaps, etc.</i></li>
+                    <li><b>Topological relations between linear features</b>: <i>i.e. Connected, Disconnected, crosses,
+                        etc.</i></li>
+                    <li><b>LeftRight relations between polygonal and linear features</b>: <i>i.e. Left_of, Right_of,
+                        Crosses, etc.</i></li>
+                    <li><b>Linear ordering relations between polygonal along a route</b>: <i>i.e. Before, After,
+                        Overlaps, etc.</i></li>
+                    <li><b>Topological relations between polygonal and linear features</b>: <i>i.e. Connected, Disconnected, crosses,
+                    etc.</i></li>
+                    <li><b>Relative orientation relations between linear features</b>: <i>i.e. Left_of, Right_of; Front_of, Half_left, etc.</i></li>
+
+                </ul>
+            </div>
+            <br>
+            <br>
+            <footer class="panel-footer">
+                <h5>Please Sign Up and Login to access the tool </h5>
+                <a href="/register"><span class="fa fa-fw fa-sign-in"></span> Sign Up &nbsp; &nbsp;</a>
+
+                <a href="/login"><span class="fa fa-fw fa-user"></span> Login</a>
+            </footer>
+        </div>
+    </div>
+</div>
+
+    {% endblock%}

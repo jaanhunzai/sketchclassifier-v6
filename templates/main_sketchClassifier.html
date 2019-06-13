@@ -18,7 +18,7 @@
 	<link href="../static/css/leaflet.draw.css" rel="stylesheet">
 
 	<link href="../static/css/main_sketchClassifier.css" rel="stylesheet">
-	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../output/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Make sure you put this AFTER Leaflet's CSS -->
 
@@ -106,7 +106,8 @@
 								<font face="Courier New"><b>Geo-referenced Map</b></font>
 							</h5>
 							<div id="loadMapThumbnail" class="loadMapThumbnail">
-								<label> <input id="MetrichMapInputbutton" type="file"
+								<label>
+									<input id="MetrichMapInputbutton" type="file"
 									style="display: none;" onChange="loadMetricMap()" /><span
 									class="badge badge-inverse" id="span_mm">load base Map</span> <img
 									id="mm" src="../static/imgs/MM.png" alt=""></img>
@@ -128,7 +129,8 @@
 									class="badge badge-inverse" id="span_sm1">load sketch 1</span>
 									<img id="sm1" src="../static/imgs/empsketch.png" alt="">
 									<div align="left" >
-										<label><input id="importSketchFeatures" type="file"
+										<label>
+											<input id="importSketchFeatures" type="file"
 											style="display: none;" onChange="uploadJsonSM()"/><span
 											class="btn btn-link" id="span_sm"><font face="Courier New">load GeoJSON</font></span>
 										</label>

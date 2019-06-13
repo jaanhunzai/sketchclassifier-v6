@@ -78,7 +78,6 @@ def get_linearOrdering_constraints (qcns):
     except IOError:
          print("NO Linear Ordering relations found")
     return loConstraints
-
 """
     ----------LeftRight---------------
 """
@@ -90,10 +89,12 @@ def get_leftRight_constraints (qcns):
             for lr_const in item['constraints']:
                 if item['relation_set']=="leftRight":
                     if lr_const['relation'] !="nonAdjacent":
+
                        lrConstraints.append(lr_const)
     except IOError:
          print("NO LeftRight relations found")
     return lrConstraints
+
 
 """
     DE9IM
@@ -372,6 +373,7 @@ def getTotalLeftRightRelations_mm(mm_qcns):
 
     if mm_qcns['properties']['map_type'] == "metric_map":
         constriantList_lr=  get_leftRight_constraints(mm_qcns['constraint_collection'])
+        #print("total Relations in LR_MM", constriantList_lr)
         for  rel in constriantList_lr:
             total_rels_lr_mm +=1
     return total_rels_lr_mm
@@ -381,6 +383,7 @@ def getTotalLeftRightRelations_sm(sm_qcns):
     total_rels_lr_sm = 0
     if sm_qcns['properties']['map_type'] == "sketch_map":
         constriantList_lr = get_leftRight_constraints(sm_qcns['constraint_collection'])
+        #print("total Relations in LR_SM", constriantList_lr)
         for rel in constriantList_lr:
             total_rels_lr_sm += 1
     return total_rels_lr_sm

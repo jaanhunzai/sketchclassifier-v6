@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout_home.html'%}
+{% block title %} login {% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <br>
+    <br>
+    <div id="register" style="text-align: center">
+        <div style="width: 750px; display: inline-block" class="w3-card-4 w3-round">
+            <header class="w3-panel w3-round w3-teal" style="padding: 5px;margin: 0px;text-align: left">
+                <h5 style="margin-left: 5px"><b>Login</b>: Please login to access the SMA</h5>
+            </header>
+            <br>
+            <div id="register_form" style="text-align: inherit">
+                <form action="" method="POST">
+
+                    <div class="form-group">
+                        <input type="text" name="username" class=form-control placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class=form-control placeholder="Password" required>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <footer class="w3-card" style="padding: 5px">
+                <h6>Please Sign Up and Login to access the tool </h6>
+                <div>
+                    <a class="nav-item active" href="/register"><span class="fa fa-fw fa-sign-in"></span> Sign Up &nbsp;&nbsp;</a>
+                    <a class="nav-item active" href="/login"><span class="fa fa-fw fa-user"></span> &nbsp; Login</a>
+                    <br>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+{% endblock%}

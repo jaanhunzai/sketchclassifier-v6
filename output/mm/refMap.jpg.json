@@ -1,0 +1,138 @@
+{
+    "properties": {
+        "map_type": "metric_map"
+    },
+    "constraint_collection": [
+        {
+            "constraints": [],
+            "relation_set": "RCC8",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "st1",
+                    "obj 2": "lm1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "st2",
+                    "obj 2": "lm1",
+                    "relation": "disjoint"
+                },
+                {
+                    "obj 1": "lm1",
+                    "obj 2": null,
+                    "relation": "disjoint"
+                }
+            ],
+            "relation_set": "DE9IM",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "st1",
+                    "obj 2": "lm1",
+                    "relation": "right"
+                },
+                {
+                    "obj 1": "st2",
+                    "obj 2": "lm1",
+                    "relation": "right"
+                }
+            ],
+            "relation_set": "leftRight",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "st1",
+                    "obj 2": "st2",
+                    "relation": "front_of"
+                },
+                {
+                    "obj 1": "st1",
+                    "obj 2": null,
+                    "relation": "nonAdjacent"
+                },
+                {
+                    "obj 1": "st2",
+                    "obj 2": null,
+                    "relation": "nonAdjacent"
+                }
+            ],
+            "relation_set": "opra",
+            "arity": 2
+        },
+        {
+            "constraints": [
+                {
+                    "obj 1": "st1",
+                    "obj 2": "st2",
+                    "relation": "connected"
+                },
+                {
+                    "obj 1": "st1",
+                    "obj 2": null,
+                    "relation": "disconnected"
+                },
+                {
+                    "obj 1": "st2",
+                    "obj 2": null,
+                    "relation": "disconnected"
+                }
+            ],
+            "relation_set": "streetTopology",
+            "arity": 2
+        },
+        {
+            "constraints": [],
+            "relation_set": "linearOrdering",
+            "arity": 2
+        }
+    ],
+    "features": [
+        {
+            "FID": "st1",
+            "id": "st1",
+            "isRoute": "Yes",
+            "name": "st1",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "st2",
+            "id": "st2",
+            "isRoute": "Yes",
+            "name": "st2",
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        },
+        {
+            "FID": "lm1",
+            "id": "lm1",
+            "isRoute": null,
+            "name": "lm1",
+            "feat_type": "Landmark",
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "Polygon"
+        },
+        {
+            "FID": null,
+            "id": null,
+            "isRoute": null,
+            "name": null,
+            "feat_type": null,
+            "sm_sk_type": "rectangle | olopololi | some stuff",
+            "descriptn": "something",
+            "geometry_type": "LineString"
+        }
+    ]
+}

@@ -20,6 +20,7 @@ def qualify_LeftRight(data):
             streetList.append((i, data[i]['geometry']))
 
     maxMinDist = computeMinMaxDist(polygonList, streetList)
+    #print(maxMinDist)
     for sec in data:
         if (sec['geometry'].geom_type=='LineString' and sec['attributes']['isRoute']=='Yes'):
             for i in range(len(data)):

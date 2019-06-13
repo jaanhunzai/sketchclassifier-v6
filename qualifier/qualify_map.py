@@ -52,7 +52,7 @@ def main_loader(mapID, geoJson,data_format, map_type ):
         # write the qualitative representation to the database
         #write_to_db(mapID, qualitative_representation)
     
-    print ("Exited Successfully!")
+    #print (qualitative_representation)
     #return "Exited Successfully!"
 
     return qualitative_representation

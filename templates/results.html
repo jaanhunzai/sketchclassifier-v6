@@ -1,13 +1,14 @@
 {% extends 'layout_home.html'%}
-{% block title %} result_sma {% endblock %}
+{% block title %} results {% endblock %}
 {% block body %}
 
 <div class="container">
-		<a type="button" class="btn btn-primary " align="left" href="/main_sketchClassifier">Home</a>
-		<button id="downloadResults" type="button" class="btn btn-primary" onclick="downloadResults()">Download Results</button>
-		<button id="exportAsCSV" type="button" class="btn btn-primary" onclick="exportAsCSV()">Export CSV Results</button>
+	<div style="text-align: right;padding: 6px"><!--<a type="button" class="btn btn-primary " align="left" href="/main_sketchClassifier">Home</a>-->
+		<button id="downloadResults" type="button" class="btn btn-outline-info" onclick="downloadResults()">Download Results</button>
+		<button id="exportAsCSV" type="button" class="btn btn-outline-info" onclick="exportAsCSV()">Export CSV Results</button>
+	</div>
 </div>
-<br>
+
 <div class="container">
 	<div  class ="jumbotron">
 		<div id ="results_div" >
@@ -17,7 +18,7 @@
 								<th><b>Completeness of Sketch Map:</b></th>
 								<th></th>
 								<th></th>
-								<th><b>ID: {{sketchMapID}}</b></th>
+								<th><b>ID: {{session['sketchFileName'] }}</b></th>
 							</tr>
 							<tr class="success">
 									<th>Spatial Features </th>
@@ -29,27 +30,27 @@
 						<tbody>
 							 <tr>
 								<td>Street segments</td>
-								<td>{{toal_mm_streets}}</td>
-								<td>{{totalSketchedStreets}}</td>
-								<td>{{streetCompleteness}}</td>
+								<td>{{session['toal_mm_streets']}}</td>
+								<td>{{session['totalSketchedStreets']}}</td>
+								<td>{{session['streetCompleteness']}}</td>
 							 </tr>
 							 <tr>
 								<td>Landmarks</td>
-								<td>{{total_mm_landmarks}}</td>
-								<td>{{totalSketchedLandmarks}}</td>
-								<td>{{landmarkCompleteness}}</td>
+								<td>{{session['total_mm_landmarks']}}</td>
+								<td>{{session['totalSketchedLandmarks']}}</td>
+								<td>{{session['landmarkCompleteness']}}</td>
 							 </tr>
 							 <tr>
 								<td>Regions</td>
-								<td>{{total_mm_cityblocks}}</td>
-								<td>{{totalSketchedCityblocks}}</td>
-								<td>{{cityblockCompleteness}}</td>
+								<td>{{session['total_mm_cityblocks']}}</td>
+								<td>{{session['totalSketchedCityblocks']}}</td>
+								<td>{{session['cityblockCompleteness']}}</td>
 							 </tr>
 							<tr>
 								<td > <b>Overall Completeness:</b></td>
 								<td></td>
 								<td></td>
-								<td><b>{{overAllCompleteness}}</b></td>
+								<td><b>{{session['overAllCompleteness']}}</b></td>
 
 							 </tr>
 						</tbody>
@@ -60,7 +61,7 @@
 				<div id ="correctness">
 				<table  class="table table-condensed text-center">
 					<tr class="success">
-						<td colspan="7" align = "left"><b>Correctness of Drawn Features in sketch map: ID( {{sketchMapID}} )</b></td>
+						<td colspan="7" align = "left"><b>Correctness of Drawn Features in sketch map: ID( {{session['sketchFileName'] }} )</b></td>
 					</tr>
 					<tr>
 						<th>Considered Qulitative Spatial Aspects</th>
@@ -74,57 +75,57 @@
 
 					<tr>
 						<td align="left">Topological Relations between Landmarks and Regions</td>
-						<td>{{totalRCC11Relations_mm}}</td>
-						<td>{{totalRCC11Relations}}</td>
-						<td>{{correctRCC11Relations}} </td>
-						<td>{{wrongMatchedRCC11rels }}</td>
-						<td>{{missingRCC11rels }}</td>
-						<td>{{correctnessAccuracy_rcc11}}</td>
+						<td>{{session['totalRCC11Relations_mm']}}</td>
+						<td>{{session['totalRCC11Relations']}}</td>
+						<td>{{session['correctRCC11Relations']}} </td>
+						<td>{{session['wrongMatchedRCC11rels'] }}</td>
+						<td>{{session['missingRCC11rels']}}</td>
+						<td>{{session['correctnessAccuracy_rcc11']}}</td>
 					 </tr>
 					 <tr>
 						<td align="left">Linear Ordering of Landmarks along Street-segments</td>
-						<td>{{total_lO_rels_mm}}</td>
-						<td>{{total_LO_rels_sm}}</td>
-						<td>{{matched_LO_rels}} </td>
-						<td>{{wrong_matched_LO_rels }}</td>
-						<td>{{missing_LO_rels }}</td>
-						<td>{{correctnessAccuracy_LO}}</td>
+						<td>{{session['total_lO_rels_mm']}}</td>
+						<td>{{session['total_LO_rels_sm']}}</td>
+						<td>{{session['matched_LO_rels']}} </td>
+						<td>{{session['wrong_matched_LO_rels']}}</td>
+						<td>{{session['missing_LO_rels']}}</td>
+						<td>{{session['correctnessAccuracy_LO']}}</td>
 					 </tr>
 					 <tr>
 						<td align="left">Left-Right Relations of Landmarks wrt. Street-segments</td>
-						<td>{{total_LR_rels_mm}}</td>
-						<td>{{total_LR_rels_sm}}</td>
-						<td>{{matched_LR_rels}} </td>
-						<td>{{wrong_matched_LR_rels }}</td>
-						<td>{{missing_LR_rels }}</td>
-						<td>{{correctnessAccuracy_LR}}</td>
+						<td>{{session['total_LR_rels_mm']}}</td>
+						<td>{{session['total_LR_rels_sm']}}</td>
+						<td>{{session['matched_LR_rels']}} </td>
+						<td>{{session['wrong_matched_LR_rels']}}</td>
+						<td>{{session['missing_LR_rels']}}</td>
+						<td>{{session['correctnessAccuracy_LR']}}</td>
 					 </tr>
 					 <tr>
 						<td align="left">Topological Relations between Street-segments and Regions/Landmarks</td>
-						<td>{{total_DE9IM_rels_mm}}</td>
-						<td>{{total_DE9IM_rels_sm}}</td>
-						<td>{{matched_DE9IM_rels}} </td>
-						<td>{{wrong_matched_DE9IM_rels }}</td>
-						<td>{{missing_DE9IM_rels }}</td>
-						<td>{{correctnessAccuracy_DE9IM}}</td>
+						<td>{{session['total_DE9IM_rels_mm']}}</td>
+						<td>{{session['total_DE9IM_rels_sm']}}</td>
+						<td>{{session['matched_DE9IM_rels']}} </td>
+						<td>{{session['wrong_matched_DE9IM_rels']}}</td>
+						<td>{{session['missing_DE9IM_rels']}}</td>
+						<td>{{session['correctnessAccuracy_DE9IM']}}</td>
 					 </tr>
 					<tr>
 						<td align="left">Connectivity of Street-segments</td>
-						<td>{{total_streetTop_rels_mm}}</td>
-						<td>{{total_streetTop_rels_sm}}</td>
-						<td>{{matched_streetTop_rels}} </td>
-						<td>{{wrong_matched_streetTop_rels }}</td>
-						<td>{{missing_streetTop_rels }}</td>
-						<td>{{correctnessAccuracy_streetTop}}</td>
+						<td>{{session['total_streetTop_rels_mm']}}</td>
+						<td>{{session['total_streetTop_rels_sm']}}</td>
+						<td>{{session['matched_streetTop_rels']}} </td>
+						<td>{{session['wrong_matched_streetTop_rels'] }}</td>
+						<td>{{session['missing_streetTop_rels']}}</td>
+						<td>{{session['correctnessAccuracy_streetTop']}}</td>
 					 </tr>
 					 <tr>
 						<td align="left">Relative Orientation of Connected Street-segments</td>
-						<td>{{total_opra_rels_mm}}</td>
-						<td>{{total_opra_rels_sm}}</td>
-						<td>{{matched_opra_rels}} </td>
-						<td>{{wrong_matched_opra_rels }}</td>
-						<td>{{missing_opra_rels }}</td>
-						<td>{{correctnessAccuracy_opra}}</td>
+						<td>{{session['total_opra_rels_mm']}}</td>
+						<td>{{session['total_opra_rels_sm']}}</td>
+						<td>{{session['matched_opra_rels']}} </td>
+						<td>{{session['wrong_matched_opra_rels']}}</td>
+						<td>{{session['missing_opra_rels']}}</td>
+						<td>{{session['correctnessAccuracy_opra']}}</td>
 					 </tr>
 				</table>
 				</div>
@@ -136,7 +137,7 @@
 						<td></td>
 						<td></td>
 						<td>Precision</td>
-						<td>{{precision}}</td>
+						<td>{{session['precision']}}</td>
 
 
 					</tr>
@@ -144,14 +145,14 @@
 						<td></td>
 						<td></td>
 						<td>Recall</td>
-						<td>{{recall}}</td>
+						<td>{{session['recall']}}</td>
 
 					</tr>
 					<tr>
 						<td></td>
 						<td></td>
-						<td><b>F-Score<b></td>
-						<td><b>{{f_score}} </b></td>
+						<td><b>F-Score</b></td>
+						<td><b>{{session['f_score']}} </b></td>
 
 					</tr>
 

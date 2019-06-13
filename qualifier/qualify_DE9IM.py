@@ -16,6 +16,8 @@ Captures the TOPOLOGICAL RELATIONS between
 """
 
 from qualifier.utils_i4l import pattern
+from shapely.geometry import *
+from shapely import geometry, ops
 
 
 disjoint = pattern('FF*FF****')
@@ -28,20 +30,37 @@ crosses = pattern('101FF0212' )
 
 def topolgical_relation_lineRegion (f1, f2):
    
-    im_pattern=f1.relate(f2)
+    #im_pattern=f1.relate(f2)
     #return im_pattern
-    if( disjoint.matches(im_pattern)):
-        return "disjoint" 
-    elif( touch.matches(im_pattern)):
-        return "touches"
-    elif( intersects.matches(im_pattern)):
+    # if( disjoint.matches(im_pattern)):
+    #     return "disjoint"
+    # elif( touch.matches(im_pattern)):
+    #     return "touches"
+    # elif( intersects.matches(im_pattern)):
+    #     return "intersects"
+    # elif( within.matches(im_pattern)):
+    #     return "within"
+    # elif(crosses.matches(im_pattern)):
+    #     return "crosses"
+    # else:
+    #     return "unKnown"
+    if (f1.intersects(f2)):
         return "intersects"
-    elif( within.matches(im_pattern)):
+    elif(f1.touches(f2)):
+        return "touches"
+    elif(f1.overlaps(f2)):
+        return "overlaps"
+    elif(f1.contains(f2)):
+        return "contains"
+    elif(f1.within(f2)):
         return "within"
-    elif(crosses.matches(im_pattern)):
+    elif(f1.crosses(f2)):
         return "crosses"
+    elif(f1.disjoint(f2)):
+        return "disjoint"
     else:
         return "unKnown"
+
 
 
 def qualify_DE9IM(data):

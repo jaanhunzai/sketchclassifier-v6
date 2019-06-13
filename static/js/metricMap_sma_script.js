@@ -15,7 +15,7 @@ var labelLayer = null;
 function loadMetricMap() {
     //var location = document.getElementById("metricmapplaceholder");
     var fileList = document.getElementById('MetrichMapInputbutton').files;
-    console.log(fileList);
+
     $("metricmapplaceholder").hide();
     for (var i = 0; i < fileList.length; i++) {
         randerLoadedMMFile(fileList[i], location);
@@ -44,12 +44,13 @@ function randerLoadedMMFile(file, location) {
 
         map_mm.options.doubleClickZoom = false;
 
-        var bounds = [[0, 0], [580, 900]];
+        var bounds = [[0, 0], [600, 850]];
         var MMLoaded = new L.imageOverlay(image.src, bounds);
         MMLoaded.addTo(map_mm);
         map_mm.fitBounds(bounds);
 
         metricFileName = image.title;
+
 
         /*   $.ajax({
                url: '/metricFileName',
@@ -58,6 +59,8 @@ function randerLoadedMMFile(file, location) {
                }
            });*/
         loadEditingToolforMM(map_mm);
+
+        $("#stepper_load_bm").prop("style", "background: #17a2b8");
     }
 
 }
@@ -66,7 +69,7 @@ function randerLoadedMMFile(file, location) {
 function uploadJsonMM() {
     var fileList = document.getElementById('importMetricFeatures').files;
     for (var i = 0; i < fileList.length; i++) {
-        randerGeoJsonFilesMM(fileList[i], map);
+        randerGeoJsonFilesMM(fileList[i], map_mm);
     }
 }
 
@@ -151,19 +154,19 @@ function loadJsonLayer_mm(map_mm) {
                         })
                     }
                 ]
-            }).addTo(map);
+            }).addTo(map_mm);
 
             // push LayerGroup for arrows and layers in Array
             var arrowsLayerGroup = L.layerGroup([layer, arrowHead]);
-            var Linie = [arrowsLayerGroup, layer, arrowHead]
+            var Linie = [arrowsLayerGroup, layer, arrowHead];
             ArrowsArray.push(Linie);
 
             layer.options.color = 'red';
             addStreetPopupMM(layer);
         }
-    })
-
-    map.addLayer(drawnItems);
+    });
+    $("#stepper_annotate_bm").prop("style", "background: #17a2b8");
+    map_mm.addLayer(drawnItems);
 
 }
 
@@ -239,6 +242,7 @@ function loadEditingToolforMM(map_mm) {
             addLandmarkPopupMM(layer);
             layer.openPopup();
         }
+        $("#stepper_annotate_bm").prop("style", "background: #17a2b8");
     });
 
     map_mm.on('pm:remove', function (event) {
@@ -309,8 +313,9 @@ function loadEditingToolforMM(map_mm) {
                     }
                 }
             }
-        })
+        });
     }
+
 }
 
 
@@ -701,7 +706,7 @@ function downloadJsonMM() {
     var mmGeojson = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(MMGeoJsonData));
     // Create export
     document.getElementById('exportMetricFeatures').setAttribute('href', 'data:' + mmGeojson);
-    document.getElementById('exportMetricFeatures').setAttribute('download', 'MM_fileName.geojson');
+    document.getElementById('exportMetricFeatures').setAttribute('download', metricFileName+'.geojson');
 }
 
 function showLabels() {
@@ -721,13 +726,38 @@ function showLabels() {
         }
     });
     labelLayer.addTo(map_mm);
-    document.getElementById("showLabels").disabled = true;
+    //document.getElementById("showLabels").disabled = true;
 
 }
 
 function hideLabels() {
     document.getElementById("hideLabels").checked = true;
     document.getElementById("showLabels").checked = false;
-    map.removeLayer(labelLayer);
-    document.getElementById("showLabels").disabled = false;
+    map_mm.removeLayer(labelLayer);
+    //document.getElementById("showLabels").disabled = false;
+}
+
+/**
+ - qualify_MM function takes the geojson from metric maps and pass
+ - it to the paython function "mmReceiver" that connect qualifier plugin
+ **/
+
+function qualify_MM(callback) {
+    MMGeoJsonData = drawnItems.toGeoJSON();
+    console.log("metric map jsondata:",MMGeoJsonData);
+
+    $.ajax({
+        url: '/mmReceiver',
+        type: 'POST',
+        data:
+            {
+                metricFileName: metricFileName,
+                MMGeoJsonData: JSON.stringify(MMGeoJsonData)
+            },
+        //contentType: 'application/json',
+        success: function (resp) {
+            console.log("Metric Map Qualify complete");
+            callback();
+        }
+    });
 }

@@ -1,10 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout_home.html'%}
+{% block title %} main_sma {% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <div class="" style="padding: 5px; margin-left: 45px; margin-right: 45px">
+        <div style="padding: 0px;margin-left: 50px;margin-right: 50px">
+            {% include "includes/stepper.html" %}
+        </div>
+    </div>
+
+    <div style="padding: 5px">
+        <table id="main_table">
+            <tr>
+                <td class="w3-card w3-round">
+                    <label class="btn btn-outline-info btn-md">
+                        <span class="fa fa-fw fa-upload"></span>
+                        <input id="importMetricFeatures" type="file"
+                               style="display: none;" onChange="uploadJsonMM()"/>Load Annotations
+                    </label>
+
+                    <label class="btn btn-outline-info btn-md">
+                        <span class="fa fa-fw fa-save"></span>
+                        <a id='exportMetricFeatures'  onclick="downloadJsonMM()">Save Annotations</a>
+                    </label>
+                    <label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="showLabels"
+                                   onclick="showLabels()">
+                            <label class="custom-control-label" for="showLabels">Show Labels</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="hideLabels"
+                                   onclick="hideLabels()">
+                            <label class="custom-control-label" for="hideLabels">Hide Labels</label>
+                        </div>
+                    </label>
+
+                </td>
+                <td></td>
+                <td class="w3-card w3-round" style="margin: auto;padding: 2px">
+                    <label class="btn btn-outline-info btn-md">
+                        <span class="fa fa-fw fa-upload"></span>
+                        <input id="importSketchFeatures" type="file"
+                               style="display: none;" onChange="uploadJsonSM()"/>Load Annotations
+                    </label>
+
+                    <label class="btn btn-outline-info btn-md">
+                        <span class="fa fa-fw fa-save"></span>
+                        <a id='exportSketchFeatures' onclick="downloadJsonSM()">Save Annotations</a>
+                     </label>
+                    <label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="showLabels_sm"
+                                   onclick="showLabels_sm()">
+                            <label class="custom-control-label" for="showLabels_sm">Show Labels</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="hideLabels_sm"
+                                   onclick="hideLabels_sm()">
+                            <label class="custom-control-label" for="hideLabels_sm">Hide Labels</label>
+                        </div>
+                    </label>
+                </td>
+            </tr>
+            <tr style="height: 20px"></tr>
+            <tr>
+                <td id="metricmapplaceholder" style="position: relative;padding: auto">
+                    <label class="btn btn-outline-info btn-lg">
+                        <input id="MetrichMapInputbutton" accept=".jpg, .png" style="display: none" type="file"
+                               onchange="loadMetricMap()"/>
+                        <span>Load Base Map (<i>image </i>)</span>
+                    </label>
+
+                </td>
+                <td id="divider" class="vl" style="position: relative; alignment: center">
+                </td>
+
+                <td id="sketchmapplaceholder" style="position: relative;padding: auto">
+                    <label class="btn btn-outline-info btn-lg">
+                        <input id="SketchMapInputbutton" accept=".jpg, .png" style="display: none" type="file"
+                               onchange="loadSketchMap()"/>
+                        <span>Load Base Map (<i>image </i>)</span>
+                    </label>
+                </td>
+            </tr>
+         </table>
+    </div>
+</div>
+
+{% endblock%}

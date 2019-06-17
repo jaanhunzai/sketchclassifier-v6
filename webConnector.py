@@ -5,15 +5,16 @@ Created on Mon Apr 30 15:51:54 2018
 @author: s_jan001
 """
 
-from flask import Flask, render_template, request,url_for, redirect, flash, session
+from flask import Flask, render_template, request, Response, url_for, redirect, flash, session
 from analyser import completeness
 from analyser import qualitativeAnalyser
 from qualifier import qualify_map
+from analyser import inverses
 import json
 import os
 import bcrypt
 from passlib.hash import sha256_crypt
-from flask_mysqldb import MySQL,MySQLdb
+#from flask_mysqldb import MySQL,MySQLdb
 
 
 #engine = create_engine("mysql+pymysql://root:root@localhost/sma",pool_pre_ping=True)
@@ -26,12 +27,12 @@ create flask web app instance
 """
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'sma'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-mysql  = MySQL(app)
+# app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = 'root'
+# app.config['MYSQL_DB'] = 'sma'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+# mysql  = MySQL(app)
 
 USER_ID =""
 OUTPUT_DIR = "./output"
@@ -69,17 +70,35 @@ def register():
         email = request.form.get("email")
 
         secure_password = bcrypt.hashpw(password,bcrypt.gensalt())
+        secure_confirm = bcrypt.hashpw(confirm, bcrypt.gensalt())
+        #cur = mysql.connection.cursor()
 
-        cur = mysql.connection.cursor()
+        userFile = os.path.join("./output", "users.json")
+        userRecord = inverses.createUserRecord(name, username, str(secure_password), str(secure_confirm), affiliation, email)
+
+        a = {userRecord["username"]:userRecord}
+        #print(a)
+        try:
+            with open(userFile, mode='r', encoding='utf-8') as f:
+                feeds = json.load(f)
+                #print(feeds)
+            with open(userFile, mode='w', encoding='utf-8') as feedsjson:
+
+                feeds.append(userRecord)
+                json.dump(feeds, feedsjson,indent=4)
+
+        except IOError:
+            print("tenureRecord.json path has problem ")
 
         #print("securePassword...",secure_password)
         if password ==confirm:
-            cur.execute ("INSERT INTO users(name, username,password,affiliation,email) VALUES(%s,%s,%s,%s,%s)",
-                        (name,username,secure_password,affiliation,email))
-            mysql.connection.commit()
+            #cur.execute ("INSERT INTO users(name, username,password,affiliation,email) VALUES(%s,%s,%s,%s,%s)",
+             #           (name,username,secure_password,affiliation,email))
+            #mysql.connection.commit()
+
             session["username"]=username
             #session["affiliation"]=affiliation
-            cur.close()
+            #cur.close()
             flash("you are registerd sucessfully and you can login now","success")
             return redirect(url_for("login"))
         else:
@@ -97,16 +116,45 @@ def login():
         username= request.form.get("username")
         password = request.form.get("password").encode('utf-8')
 
-        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cur.execute("SELECT * FROM users WHERE username=%s",(username,))
-        user = cur.fetchone()
-        cur.close()
+        #cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        #cur.execute("SELECT * FROM users WHERE username=%s",(username,))
+        #user = cur.fetchone()
+        #cur.close()
+        userFile = os.path.join("./output", "users.json")
+        with open(userFile, 'r+') as file:
+            try:
+                users = json.load(file)
+                #print("here you go ",users)
+            except IOError:
+                    print("users.json is not loading ")
 
+        if len(username) > 0:
+            for user in users:
+                if username==user["username"]:
+                    session['username'] = user['username']
+                    USER_ID = session['username']
+                    USER_PROJ_DIR = os.path.join("./output", USER_ID)
+                    try:
+                        if not (os.path.exists(USER_PROJ_DIR)):
+                            os.mkdir(USER_PROJ_DIR)
+                    except IOError:
+                        print("problem in creating USER_PROJ_DIR")
+
+                    # flash("You  are login sucessfully", "danger")
+                    return redirect(url_for("main_sma"))
+                else:
+                    return (("Error password or user not Match", "danger"))
+        else:
+            return (("Error password or user not Match", "danger"))
+    else:
+        return render_template("login.html")
+
+        """
         if len(user)>0:
             if bcrypt.hashpw(password,user['password'].encode('utf-8'))== user['password'].encode('utf-8'):
                 session['username']=user['username']
                 USER_ID = session['username']
-                USER_PROJ_DIR = os.path.join(OUTPUT_DIR,USER_ID)
+                USER_PROJ_DIR = os.path.join("./output",USER_ID)
                 try:
                     if not (os.path.exists(USER_PROJ_DIR)):
                         os.mkdir(USER_PROJ_DIR)
@@ -117,11 +165,12 @@ def login():
                 return redirect(url_for("main_sma"))
             else:
                 return (("Error password or user not Match", "danger"))
+                
         else:
             return (("Error password or user not Match", "danger"))
     else:
         return render_template("login.html")
-
+"""
 
 @app.route("/logout",methods = ["POST", "GET"])
 def logout():
@@ -166,18 +215,20 @@ def getSketchMapID():
 def mmGeoJsonReceiver():
     global SM_QCN_PATH
     global MM_QCN_PATH
-    global USER_PROJ_DIR
+    #global USER_PROJ_DIR
     fileName_full = str(request.form.get('metricFileName'))
     MMGeoJsonData = request.form.get('MMGeoJsonData')
     MMGeoJsonData = json.loads(MMGeoJsonData)
     # print("here svg file and content:",fileName_full, svgContent)
     fileName, extension = os.path.splitext(fileName_full)
-    print("here is SMGeoJsonData:",MMGeoJsonData)
+    #print("here is SMGeoJsonData:",MMGeoJsonData)
     #smGeoJson = request.get_json()
     data_format = "geojson"
     map_type = "metric_map"
 
     MetricMap_QCNS = qualify_map.main_loader(fileName, MMGeoJsonData, data_format, map_type)
+    USER_ID = session['username']
+    USER_PROJ_DIR = os.path.join("./output",USER_ID)
     try:
         MM_QCN_PATH = os.path.join(USER_PROJ_DIR,fileName_full+".json")
         #filepath = './output/'+str("sketchMapID")+'.json'
@@ -208,12 +259,14 @@ def smGeoJsonReceiver():
     SMGeoJsonData = json.loads(SMGeoJsonData)
     # print("here svg file and content:",fileName_full, svgContent)
     fileName, extension = os.path.splitext(fileName_full)
-    print("here is SMGeoJsonData:",SMGeoJsonData)
+    #print("here is SMGeoJsonData:",SMGeoJsonData)
     #smGeoJson = request.get_json()
     data_format = "geojson"
     map_type = "sketch_map"
 
     sketchMap_QCNS = qualify_map.main_loader(fileName, SMGeoJsonData, data_format, map_type)
+    USER_ID = session['username']
+    USER_PROJ_DIR = os.path.join("./output",USER_ID)
     try:
         SM_QCN_PATH = os.path.join(USER_PROJ_DIR,fileName_full+".json")
         #filepath = './output/'+str("sketchMapID")+'.json'
@@ -231,15 +284,22 @@ def smGeoJsonReceiver():
 
 @app.route('/analyzeInputMap',methods=["POST", "GET"])
 def analyzeInputMap():
-    global USER_PROJ_DIR
-    global SM_QCN_PATH
-    global MM_QCN_PATH
+
     if request.method == "POST":
+        session.modified = True
         sketchFileName = str(request.form.get('sketchFileName'))
         metricFileName = str(request.form.get('metricFileName'))
 
-        session['sketchFileName'] = sketchFileName
+        #session['sketchFileName'] = sketchFileName
+        USER_ID = session['username']
+        #print("USER_ID",USER_ID)
+        USER_PROJ_DIR = os.path.join("./output", USER_ID)
 
+        MM_QCN_PATH = os.path.join(USER_PROJ_DIR,metricFileName+".json")
+        SM_QCN_PATH = os.path.join(USER_PROJ_DIR, sketchFileName + ".json")
+
+        print("MM_QCN_PATH",MM_QCN_PATH)
+        print("SM_QCN_PATH", SM_QCN_PATH)
         with open( MM_QCN_PATH,'r+') as mmjson:
             try:
                 #print("reading path..",os.path.join(dir_qcns,'metric_map.json'))
@@ -258,9 +318,9 @@ def analyzeInputMap():
         toal_mm_streets = completeness.get_streets_mm(metricMapQCNs)
         total_mm_cityblocks = completeness.get_cityblocks_mm(metricMapQCNs)
 
-        session['total_mm_landmarks'] = total_mm_landmarks
-        session['toal_mm_streets'] = toal_mm_streets
-        session['total_mm_cityblocks'] = total_mm_cityblocks
+        # session['total_mm_landmarks'] = total_mm_landmarks
+        # session['toal_mm_streets'] = toal_mm_streets
+        # session['total_mm_cityblocks'] = total_mm_cityblocks
 
         # print("total landmarks in MM...:", total_mm_landmarks)
         # print("total streets in MM...:", toal_mm_streets)
@@ -271,9 +331,9 @@ def analyzeInputMap():
         totalSketchedStreets = completeness.get_streets_sm(sketchMapQCNs)
         totalSketchedCityblocks = completeness.get_cityblocks_sm(sketchMapQCNs)
 
-        session['totalSketchedLandmarks'] = totalSketchedLandmarks
-        session['totalSketchedStreets'] = totalSketchedStreets
-        session['totalSketchedCityblocks'] = totalSketchedCityblocks
+        # session['totalSketchedLandmarks'] = totalSketchedLandmarks
+        # session['totalSketchedStreets'] = totalSketchedStreets
+        # session['totalSketchedCityblocks'] = totalSketchedCityblocks
 
         # print("total landmarks in SM...:", totalSketchedLandmarks)
         # print("total streets in SM...:", totalSketchedStreets)
@@ -282,17 +342,17 @@ def analyzeInputMap():
 
         landmarkCompleteness = completeness.get_landmarkCompleteness(totalSketchedLandmarks,total_mm_landmarks)
         landmarkCompleteness = round(landmarkCompleteness, 2)
-        session['landmarkCompleteness'] = landmarkCompleteness
+        #session['landmarkCompleteness'] = landmarkCompleteness
 
         streetCompleteness= completeness.get_streetCompleteness(totalSketchedStreets,toal_mm_streets)
         streetCompleteness = round(streetCompleteness, 2)
-        session['streetCompleteness'] = streetCompleteness
+        #session['streetCompleteness'] = streetCompleteness
 
         cityblockCompleteness = completeness.get_cityblockCompleteness(totalSketchedCityblocks,total_mm_cityblocks)
         cityblockCompleteness = round(cityblockCompleteness, 2)
-        session['cityblockCompleteness'] = cityblockCompleteness
+        #session['cityblockCompleteness'] = cityblockCompleteness
         overAllCompleteness=completeness.get_overall_completness(landmarkCompleteness,streetCompleteness,cityblockCompleteness)
-        session['overAllCompleteness'] = overAllCompleteness
+        #session['overAllCompleteness'] = overAllCompleteness
 
         """
             Measure the correct relations using RCC11
@@ -307,12 +367,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_rcc11= 0.00
 
-        session['totalRCC11Relations_mm'] = totalRCC11Relations_mm
-        session['totalRCC11Relations'] = totalRCC11Relations
-        session['correctRCC11Relations'] = correctRCC11Relations
-        session['wrongMatchedRCC11rels'] = wrongMatchedRCC11rels
-        session['missingRCC11rels'] = missingRCC11rels
-        session['correctnessAccuracy_rcc11'] = round(correctnessAccuracy_rcc11,2)
+        # session['totalRCC11Relations_mm'] = totalRCC11Relations_mm
+        # session['totalRCC11Relations'] = totalRCC11Relations
+        # session['correctRCC11Relations'] = correctRCC11Relations
+        # session['wrongMatchedRCC11rels'] = wrongMatchedRCC11rels
+        # session['missingRCC11rels'] = missingRCC11rels
+        # session['correctnessAccuracy_rcc11'] = round(correctnessAccuracy_rcc11,2)
 
         # print("total RCC11 rels in MM...:", totalRCC11Relations_mm)
         # print("total RCC11 rels in SM...:", totalRCC11Relations)
@@ -335,12 +395,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_LO = 0.00
 
-        session['total_lO_rels_mm'] = total_lO_rels_mm
-        session['total_LO_rels_sm'] = total_LO_rels_sm
-        session['matched_LO_rels'] = matched_LO_rels
-        session['wrong_matched_LO_rels'] = wrong_matched_LO_rels
-        session['missing_LO_rels'] = missing_LO_rels
-        session['correctnessAccuracy_LO'] = round(correctnessAccuracy_LO,2)
+        # session['total_lO_rels_mm'] = total_lO_rels_mm
+        # session['total_LO_rels_sm'] = total_LO_rels_sm
+        # session['matched_LO_rels'] = matched_LO_rels
+        # session['wrong_matched_LO_rels'] = wrong_matched_LO_rels
+        # session['missing_LO_rels'] = missing_LO_rels
+        # session['correctnessAccuracy_LO'] = round(correctnessAccuracy_LO,2)
         # print("total LO rels_mm...:", total_lO_rels_mm)
         # print("total LO rels_sm...:", total_LO_rels_sm)
         # print("matched LO rels...:", matched_LO_rels)
@@ -363,12 +423,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_LR = 0.00
 
-        session['total_LR_rels_mm'] = total_LR_rels_mm
-        session['total_LR_rels_sm'] = total_LR_rels_sm
-        session['matched_LR_rels'] = matched_LR_rels
-        session['wrong_matched_LR_rels'] = wrong_matched_LR_rels
-        session['missing_LR_rels'] = missing_LR_rels
-        session['correctnessAccuracy_LR'] = round(correctnessAccuracy_LR, 2)
+        # session['total_LR_rels_mm'] = total_LR_rels_mm
+        # session['total_LR_rels_sm'] = total_LR_rels_sm
+        # session['matched_LR_rels'] = matched_LR_rels
+        # session['wrong_matched_LR_rels'] = wrong_matched_LR_rels
+        # session['missing_LR_rels'] = missing_LR_rels
+        # session['correctnessAccuracy_LR'] = round(correctnessAccuracy_LR, 2)
         # print("total LR rels_mm...:", total_LR_rels_mm)
         # print("total LR rels_sm...:", total_LR_rels_sm)
         # print("matched LR rels...:", matched_LR_rels)
@@ -390,12 +450,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_DE9IM = 0.00
 
-        session['total_DE9IM_rels_mm'] = total_DE9IM_rels_mm
-        session['total_DE9IM_rels_sm'] = total_DE9IM_rels_sm
-        session['matched_DE9IM_rels'] = matched_DE9IM_rels
-        session['wrong_matched_DE9IM_rels'] = wrong_matched_DE9IM_rels
-        session['missing_DE9IM_rels'] = missing_DE9IM_rels
-        session['correctnessAccuracy_DE9IM'] = round(correctnessAccuracy_DE9IM, 2)
+        # session['total_DE9IM_rels_mm'] = total_DE9IM_rels_mm
+        # session['total_DE9IM_rels_sm'] = total_DE9IM_rels_sm
+        # session['matched_DE9IM_rels'] = matched_DE9IM_rels
+        # session['wrong_matched_DE9IM_rels'] = wrong_matched_DE9IM_rels
+        # session['missing_DE9IM_rels'] = missing_DE9IM_rels
+        # session['correctnessAccuracy_DE9IM'] = round(correctnessAccuracy_DE9IM, 2)
         # print("total DE9IM rels_mm...:", total_DE9IM_rels_mm)
         # print("total DE9IM rels_sm...:", total_DE9IM_rels_sm)
         # print("matched DE9IM rels...:", matched_DE9IM_rels)
@@ -416,12 +476,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_streetTop = 0.00
 
-        session['total_streetTop_rels_mm'] = total_streetTop_rels_mm
-        session['total_streetTop_rels_sm'] = total_streetTop_rels_sm
-        session['matched_streetTop_rels'] = matched_streetTop_rels
-        session['wrong_matched_streetTop_rels'] = wrong_matched_streetTop_rels
-        session['missing_streetTop_rels'] = missing_streetTop_rels
-        session['correctnessAccuracy_streetTop'] = round(correctnessAccuracy_streetTop, 2)
+        # session['total_streetTop_rels_mm'] = total_streetTop_rels_mm
+        # session['total_streetTop_rels_sm'] = total_streetTop_rels_sm
+        # session['matched_streetTop_rels'] = matched_streetTop_rels
+        # session['wrong_matched_streetTop_rels'] = wrong_matched_streetTop_rels
+        # session['missing_streetTop_rels'] = missing_streetTop_rels
+        # session['correctnessAccuracy_streetTop'] = round(correctnessAccuracy_streetTop, 2)
         # print("total streetTop rels_mm...:", total_streetTop_rels_mm)
         # print("total streetTop rels_sm...:", total_streetTop_rels_sm)
         # print("matched streetTop rels...:", matched_streetTop_rels)
@@ -442,12 +502,12 @@ def analyzeInputMap():
         else:
             correctnessAccuracy_opra=0.00
 
-        session['total_opra_rels_mm'] = total_opra_rels_mm
-        session['total_opra_rels_sm'] = total_opra_rels_sm
-        session['matched_opra_rels'] = matched_opra_rels
-        session['wrong_matched_opra_rels'] = wrong_matched_opra_rels
-        session['missing_opra_rels'] = missing_opra_rels
-        session['correctnessAccuracy_opra'] = round(correctnessAccuracy_opra, 2)
+        # session['total_opra_rels_mm'] = total_opra_rels_mm
+        # session['total_opra_rels_sm'] = total_opra_rels_sm
+        # session['matched_opra_rels'] = matched_opra_rels
+        # session['wrong_matched_opra_rels'] = wrong_matched_opra_rels
+        # session['missing_opra_rels'] = missing_opra_rels
+        # session['correctnessAccuracy_opra'] = round(correctnessAccuracy_opra, 2)
         # print("total opra rels_mm...:", total_opra_rels_mm)
         # print("total opra rels_sm...:", total_opra_rels_sm)
         # print("matched opra rels...:", matched_opra_rels)
@@ -466,57 +526,136 @@ def analyzeInputMap():
 
         f_score = 2 * ((precision * recall) / (precision + recall))
 
-        session['precision'] = round(precision,2)
-        session['recall'] = round(recall,2)
-        session['f_score'] = round(f_score,2)
-        session['clickedAnalyzer'] = "clickedAnalyzer"
+
+        #session['precision'] = round(precision,2)
+        #session['recall'] = round(recall,2)
+        #session['f_score'] = round(f_score,2)
+        #session['clickedAnalyzer'] = "clickedAnalyzer"
         print("precision....:", precision)
         print("recall....:", recall)
         print("F-value....:", f_score)
-        #session['f_score'] = f_score
+        #session.modified = True
 
-        return ""
+        return json.dumps({"sketchMapID": sketchFileName, "total_mm_landmarks": total_mm_landmarks,
+                           "toal_mm_streets": toal_mm_streets, "total_mm_cityblocks": total_mm_cityblocks,
+                           "totalSketchedLandmarks": totalSketchedLandmarks,
+                           "totalSketchedStreets": totalSketchedStreets,
+                           "totalSketchedCityblocks": totalSketchedCityblocks,
+                           "landmarkCompleteness": landmarkCompleteness,
+                           "streetCompleteness": streetCompleteness, "cityblockCompleteness": cityblockCompleteness,
+                           "overAllCompleteness": round(overAllCompleteness, 2),
+                           "totalRCC11Relations_mm": totalRCC11Relations_mm, "totalRCC11Relations": totalRCC11Relations,
+                           "correctRCC11Relations": correctRCC11Relations,
+                           "wrongMatchedRCC11rels": wrongMatchedRCC11rels,
+                           "missingRCC11rels": missingRCC11rels,
+                           "correctnessAccuracy_rcc11": round(correctnessAccuracy_rcc11, 2),
+                           "total_lO_rels_mm": total_lO_rels_mm, "total_LO_rels_sm": total_LO_rels_sm,
+                           "matched_LO_rels": matched_LO_rels, "wrong_matched_LO_rels": wrong_matched_LO_rels,
+                           "missing_LO_rels": missing_LO_rels,
+                           "correctnessAccuracy_LO": round(correctnessAccuracy_LO, 2),
+                           "total_LR_rels_mm": total_LR_rels_mm,
+                           "total_LR_rels_sm": total_LR_rels_sm, "matched_LR_rels": matched_LR_rels,
+                           "wrong_matched_LR_rels": wrong_matched_LR_rels, "missing_LR_rels": missing_LR_rels,
+                           "correctnessAccuracy_LR": round(correctnessAccuracy_LR, 2),
+                           "total_DE9IM_rels_mm": total_DE9IM_rels_mm, "total_DE9IM_rels_sm": total_DE9IM_rels_sm,
+                           "matched_DE9IM_rels": matched_DE9IM_rels,
+                           "wrong_matched_DE9IM_rels": wrong_matched_DE9IM_rels,
+                           "missing_DE9IM_rels": missing_DE9IM_rels,
+                           "correctnessAccuracy_DE9IM": round(correctnessAccuracy_DE9IM, 2),
+                           "total_streetTop_rels_mm": total_streetTop_rels_mm,
+                           "total_streetTop_rels_sm": total_streetTop_rels_sm,
+                           "matched_streetTop_rels": matched_streetTop_rels,
+                           "wrong_matched_streetTop_rels": wrong_matched_streetTop_rels,
+                           "missing_streetTop_rels": missing_streetTop_rels,
+                           "correctnessAccuracy_streetTop": round(correctnessAccuracy_streetTop, 2),
+                           "total_opra_rels_mm": total_opra_rels_mm, "total_opra_rels_sm": total_opra_rels_sm,
+                           "matched_opra_rels": matched_opra_rels, "wrong_matched_opra_rels": wrong_matched_opra_rels,
+                           "missing_opra_rels": missing_opra_rels,
+                           "correctnessAccuracy_opra": round(correctnessAccuracy_opra, 2),
+                           "precision": round(precision, 2),
+                           "recall": round(recall, 2),
+                           "f_score": round(f_score, 2)})
+
     
 
-@app.route('/results/', methods=['GET'])
-def profile():
-    return render_template('results.html', name=session['username'])
+# @app.route('/results/', methods=['GET'])
+# def profile():
+#     return render_template('results.html', name=session['username'])
 
 
 if __name__ == '__main__':
     app.secret_key = "root1234code"
     app.run(debug=True)
 
- # return render_template("results.html", sketchMapID=sketchFileName, total_mm_landmarks=total_mm_landmarks,
- #          toal_mm_streets=toal_mm_streets, total_mm_cityblocks=total_mm_cityblocks,
- #          totalSketchedLandmarks=totalSketchedLandmarks, totalSketchedStreets=totalSketchedStreets,
- #          totalSketchedCityblocks=totalSketchedCityblocks, landmarkCompleteness=landmarkCompleteness,
- #          streetCompleteness=streetCompleteness, cityblockCompleteness=cityblockCompleteness,
- #          overAllCompleteness=round(overAllCompleteness, 2),
- #          totalRCC11Relations_mm=totalRCC11Relations_mm, totalRCC11Relations=totalRCC11Relations,
- #          correctRCC11Relations=correctRCC11Relations, wrongMatchedRCC11rels=wrongMatchedRCC11rels,
- #                            missingRCC11rels=missingRCC11rels,
- #                            correctnessAccuracy_rcc11=round(correctnessAccuracy_rcc11, 2),
- #                           total_lO_rels_mm=total_lO_rels_mm, total_LO_rels_sm=total_LO_rels_sm,
- #                            matched_LO_rels=matched_LO_rels, wrong_matched_LO_rels=wrong_matched_LO_rels,
- #                            missing_LO_rels=missing_LO_rels,
- #                            correctnessAccuracy_LO=round(correctnessAccuracy_LO, 2), total_LR_rels_mm=total_LR_rels_mm,
- #                            total_LR_rels_sm=total_LR_rels_sm, matched_LR_rels=matched_LR_rels,
- #                            wrong_matched_LR_rels=wrong_matched_LR_rels, missing_LR_rels=missing_LR_rels,
- #                            correctnessAccuracy_LR=round(correctnessAccuracy_LR, 2),
- #                           total_DE9IM_rels_mm=total_DE9IM_rels_mm, total_DE9IM_rels_sm=total_DE9IM_rels_sm,
- #                            matched_DE9IM_rels=matched_DE9IM_rels, wrong_matched_DE9IM_rels=wrong_matched_DE9IM_rels,
- #                            missing_DE9IM_rels=missing_DE9IM_rels,
- #                            correctnessAccuracy_DE9IM=round(correctnessAccuracy_DE9IM, 2),
- #                            total_streetTop_rels_mm=total_streetTop_rels_mm,
- #                            total_streetTop_rels_sm=total_streetTop_rels_sm,
- #                           matched_streetTop_rels=matched_streetTop_rels,
- #                           wrong_matched_streetTop_rels=wrong_matched_streetTop_rels,
- #                            missing_streetTop_rels=missing_streetTop_rels,
- #                            correctnessAccuracy_streetTop=round(correctnessAccuracy_streetTop, 2),
- #                            total_opra_rels_mm=total_opra_rels_mm, total_opra_rels_sm=total_opra_rels_sm,
- #                            matched_opra_rels=matched_opra_rels, wrong_matched_opra_rels=wrong_matched_opra_rels,
- #                            missing_opra_rels=missing_opra_rels,
- #                            correctnessAccuracy_opra=round(correctnessAccuracy_opra, 2), precision=round(precision, 2),
- #                           recall=round(recall, 2),
- #                            f_score=round(f_score, 2))
+"""
+
+return json.dumps({"sketchMapID":sketchFileName, "total_mm_landmarks":total_mm_landmarks,
+                 "toal_mm_streets":toal_mm_streets, "total_mm_cityblocks":total_mm_cityblocks,
+                 "totalSketchedLandmarks":totalSketchedLandmarks, "totalSketchedStreets":totalSketchedStreets,
+                 "totalSketchedCityblocks":totalSketchedCityblocks, "landmarkCompleteness":landmarkCompleteness,
+                 "streetCompleteness":streetCompleteness, "cityblockCompleteness":cityblockCompleteness,
+                 "overAllCompleteness":round(overAllCompleteness, 2),
+                 "totalRCC11Relations_mm":totalRCC11Relations_mm, "totalRCC11Relations":totalRCC11Relations,
+                 "correctRCC11Relations":correctRCC11Relations, "wrongMatchedRCC11rels":wrongMatchedRCC11rels,
+                 "missingRCC11rels":missingRCC11rels,
+                 "correctnessAccuracy_rcc11":round(correctnessAccuracy_rcc11, 2),
+                 "total_lO_rels_mm":total_lO_rels_mm, "total_LO_rels_sm":total_LO_rels_sm,
+                 "matched_LO_rels":matched_LO_rels, "wrong_matched_LO_rels":wrong_matched_LO_rels,
+                 "missing_LO_rels":missing_LO_rels,
+                 "correctnessAccuracy_LO":round(correctnessAccuracy_LO, 2), "total_LR_rels_mm":total_LR_rels_mm,
+                 "total_LR_rels_sm":total_LR_rels_sm, "matched_LR_rels":matched_LR_rels,
+                 "wrong_matched_LR_rels":wrong_matched_LR_rels, "missing_LR_rels":missing_LR_rels,
+                 "correctnessAccuracy_LR":round(correctnessAccuracy_LR, 2),
+                 "total_DE9IM_rels_mm":total_DE9IM_rels_mm, "total_DE9IM_rels_sm":total_DE9IM_rels_sm,
+                 "matched_DE9IM_rels":matched_DE9IM_rels, "wrong_matched_DE9IM_rels":wrong_matched_DE9IM_rels,
+                 "missing_DE9IM_rels":missing_DE9IM_rels,
+                 "correctnessAccuracy_DE9IM":round(correctnessAccuracy_DE9IM, 2),
+                 "total_streetTop_rels_mm":total_streetTop_rels_mm,
+                 "total_streetTop_rels_sm":total_streetTop_rels_sm,
+                 "matched_streetTop_rels":matched_streetTop_rels,
+                 "wrong_matched_streetTop_rels":wrong_matched_streetTop_rels,
+                 "missing_streetTop_rels":missing_streetTop_rels,
+                 "correctnessAccuracy_streetTop":round(correctnessAccuracy_streetTop, 2),
+                 "total_opra_rels_mm":total_opra_rels_mm, "total_opra_rels_sm":total_opra_rels_sm,
+                 "matched_opra_rels":matched_opra_rels, "wrong_matched_opra_rels":wrong_matched_opra_rels,
+                 "missing_opra_rels":missing_opra_rels,
+                 "correctnessAccuracy_opra":round(correctnessAccuracy_opra, 2),
+                 "precision":round(precision, 2),
+                 "recall":round(recall, 2),
+                 "f_score":round(f_score, 2)})
+"""
+"""
+        return render_template('resultSummary.html', sketchMapID=sketchFileName, total_mm_landmarks=total_mm_landmarks,
+                         toal_mm_streets=toal_mm_streets, total_mm_cityblocks=total_mm_cityblocks,
+                          totalSketchedLandmarks=totalSketchedLandmarks, totalSketchedStreets=totalSketchedStreets,
+                          totalSketchedCityblocks=totalSketchedCityblocks, landmarkCompleteness=landmarkCompleteness,
+                          streetCompleteness=streetCompleteness, cityblockCompleteness=cityblockCompleteness,
+                          overAllCompleteness=round(overAllCompleteness, 2),
+                          totalRCC11Relations_mm=totalRCC11Relations_mm, totalRCC11Relations=totalRCC11Relations,
+                          correctRCC11Relations=correctRCC11Relations, wrongMatchedRCC11rels=wrongMatchedRCC11rels,
+                                            missingRCC11rels=missingRCC11rels,
+                                            correctnessAccuracy_rcc11=round(correctnessAccuracy_rcc11, 2),
+                                           total_lO_rels_mm=total_lO_rels_mm, total_LO_rels_sm=total_LO_rels_sm,
+                                            matched_LO_rels=matched_LO_rels, wrong_matched_LO_rels=wrong_matched_LO_rels,
+                                            missing_LO_rels=missing_LO_rels,
+                                            correctnessAccuracy_LO=round(correctnessAccuracy_LO, 2), total_LR_rels_mm=total_LR_rels_mm,
+                                            total_LR_rels_sm=total_LR_rels_sm, matched_LR_rels=matched_LR_rels,
+                                            wrong_matched_LR_rels=wrong_matched_LR_rels, missing_LR_rels=missing_LR_rels,
+                                            correctnessAccuracy_LR=round(correctnessAccuracy_LR, 2),
+                                           total_DE9IM_rels_mm=total_DE9IM_rels_mm, total_DE9IM_rels_sm=total_DE9IM_rels_sm,
+                                            matched_DE9IM_rels=matched_DE9IM_rels, wrong_matched_DE9IM_rels=wrong_matched_DE9IM_rels,
+                                            missing_DE9IM_rels=missing_DE9IM_rels,
+                                            correctnessAccuracy_DE9IM=round(correctnessAccuracy_DE9IM, 2),
+                                            total_streetTop_rels_mm=total_streetTop_rels_mm,
+                                            total_streetTop_rels_sm=total_streetTop_rels_sm,
+                                           matched_streetTop_rels=matched_streetTop_rels,
+                                           wrong_matched_streetTop_rels=wrong_matched_streetTop_rels,
+                                            missing_streetTop_rels=missing_streetTop_rels,
+                                            correctnessAccuracy_streetTop=round(correctnessAccuracy_streetTop, 2),
+                                            total_opra_rels_mm=total_opra_rels_mm, total_opra_rels_sm=total_opra_rels_sm,
+                                            matched_opra_rels=matched_opra_rels, wrong_matched_opra_rels=wrong_matched_opra_rels,
+                                            missing_opra_rels=missing_opra_rels,
+                                            correctnessAccuracy_opra=round(correctnessAccuracy_opra, 2), precision=round(precision, 2),
+                                           recall=round(recall, 2),
+                                           f_score=round(f_score, 2))
+                                    """

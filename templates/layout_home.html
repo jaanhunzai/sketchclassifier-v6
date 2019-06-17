@@ -30,6 +30,8 @@
 
 
 <!-- from otherfile!-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw.js"></script>
     <script src="../static/js/leaflet.geometryutil.js"></script>
@@ -127,10 +129,11 @@
           </div>
   {% else %}
   {% endif %}
+
 {% block body %}
 {% endblock %}
   <div>
-      {% include "includes/resultSummary.html" %}
+      {% include "resultSummary.html" %}
   </div>
   <div id="processRing" style="visibility: hidden"></div>
   <div id="footer_div" class="navbar navbar-expand-xl navbar-dark bg-dark">

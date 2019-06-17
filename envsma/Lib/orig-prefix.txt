@@ -1,0 +1,1 @@
+c:\programdata\anaconda2\envs\python36

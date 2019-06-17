@@ -110,3 +110,15 @@ def get_opra_inv_rel(rel):
         return "front_of"
     else:
         return "None"
+
+
+def createUserRecord(name,username,password,confirm,affiliation,email):
+    userRecord= {
+            "name": name,
+            "username": username,
+            "password": password,
+            "confirm":confirm,
+            "affiliation":affiliation,
+            "email":email
+             }
+    return userRecord

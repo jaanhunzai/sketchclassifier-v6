@@ -5,7 +5,7 @@ Flask==1.0.3
 Flask-MySQLdb==0.2.0
 geos==0.2.2
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 joblib==0.13.2
 lxml==4.3.4
 MarkupSafe==1.1.1

@@ -10,7 +10,7 @@ joblib==0.13.2
 lxml==4.3.4
 MarkupSafe==1.1.1
 mysqlclient==1.4.2.post1
-numpy==1.16.4
+numpy==1.22.0
 passlib==1.7.1
 Pillow==6.0.0
 pycparser==2.19
